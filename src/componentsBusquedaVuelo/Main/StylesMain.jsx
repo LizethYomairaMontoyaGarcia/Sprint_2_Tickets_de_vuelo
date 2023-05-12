@@ -8,7 +8,6 @@ export const PaymentMethods = styled.div`
 
   @media screen and (max-width: 765px) {
     flex-direction: column;
-    
   }
 `;
 
