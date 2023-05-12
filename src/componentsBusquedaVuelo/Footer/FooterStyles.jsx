@@ -1,14 +1,14 @@
 import { styled } from "styled-components";
 
 export const ContainerFooter = styled.div`
-  padding: 30px 70px 40px 70px;
-  
+  padding: 30px 80px 40px 80px;
 `;
 
 export const Position = styled.div`
   flex-direction: row;
-  display:flex;
-   padding: 30px 70px 40px 70px;
+  display: flex;
+  gap: 90px;
+  padding: 30px 30px 40px 30px;
 `;
 
 export const ContainerImg = styled.div`
@@ -31,9 +31,6 @@ export const ContainerImg = styled.div`
   }
 
   figure {
-    :hover {
-      color: #8431b4;
-    }
     img {
       width: 80px;
     }
