@@ -5,24 +5,25 @@ export const StyleHeaderForm = styled.div`
   top: 100px;
   padding: 20px 30px;
   background: var(--DarkGry);
-  width: 920px;
+  width: 700px;
   border-radius: 15px;
   border: 1px solid #ddd;
 
   h1 {
     width: 100%;
-    font-size: 4.5rem;
+    font-size: 3rem;
     padding: 10px 0;
     font-weight: 900;
     line-height: 3.7rem;
   }
   p {
     color: var(--Gray);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   button{
-    font-size: 2rem;
-    width: 250px;
+    font-size: 1rem;
+    width: 150px;
+    height: 30px;
     border-radius: 10px;
   }
 `;
