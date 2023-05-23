@@ -1,14 +1,17 @@
 import styled from "styled-components";
-import vueloAirport from "../../images/vuelo_aeropuerto.jpg";
 
-export const HeaderBac = styled.header`
+export const HeaderComponet = styled.header`
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
-  height: 90vh;
-  background-image: url(${vueloAirport});
-  background-size: cover;
-  background-position: center;
-  
-  `;
+  padding: 50px, 10px;
+`;
+
+export const ImgVuelo = styled.img`
+  width: 980px;
+  height:700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 300px;
+  border-radius:30px;
+  margin-top:50px;
+`;

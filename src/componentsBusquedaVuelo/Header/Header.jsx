@@ -1,14 +1,17 @@
 import React from "react";
-import { HeaderBac } from "./HeaderStyled";
+import { HeaderComponet } from "./HeaderStyled";
+import { ImgVuelo } from "./HeaderStyled";
 import HeaderForm from "../HeaderForm/HeaderForm";
+import vueloAirport from "../../images/vuelo_aeropuerto.jpg";
 
 const Header = () => {
   return (
-    <HeaderBac>
-      <div>
-        <HeaderForm />
-      </div>
-    </HeaderBac>
+    <HeaderComponet>
+      <HeaderForm />
+      <figure>
+        <ImgVuelo src={vueloAirport} alt="" />
+      </figure>
+    </HeaderComponet>
   );
 };
 

@@ -1,8 +1,8 @@
 import React from "react";
 import GlobalStyles from "./StylesApp";
-import Main from "../Main/Main";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+import Main from "../componentsBusquedaVuelo/Main/Main";
+import Footer from "../componentsBusquedaVuelo/Footer/Footer";
+import Header from "../componentsBusquedaVuelo/Header/Header";
 
 const App = () => {
   return (

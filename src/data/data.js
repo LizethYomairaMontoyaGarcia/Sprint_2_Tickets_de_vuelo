@@ -1,7 +1,7 @@
 import transporte from "../images/carro.svg";
 import vuelos from "../images/yavas.svg";
 import grupos from "../images/grupos.svg";
-import hoteles from "../images/hotels.svg";
+import hoteles from "../images/hoteles.svg";
 import carga from "../images/carga.svg";
 
 export const footerInfo = [
