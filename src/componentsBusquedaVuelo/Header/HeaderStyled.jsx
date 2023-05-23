@@ -6,10 +6,12 @@ export const HeaderComponet = styled.header`
 `;
 
 export const ImgVuelo = styled.img`
-  width: 950px;
+  width: 980px;
+  height:700px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 400px;
+  margin-left: 300px;
   border-radius:30px;
+  margin-top:50px;
 `;
