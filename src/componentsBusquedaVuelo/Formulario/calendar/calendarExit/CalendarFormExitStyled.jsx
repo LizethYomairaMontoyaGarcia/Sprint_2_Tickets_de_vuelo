@@ -26,7 +26,7 @@ export const H2Arrows = styled.h2`
 //inset: 40px;
 //border: 1px solid rgb(204, 204, 204);
 //background: rgb(255, 255, 255);
-//overflow: auto;
+//overflow: auto; 
 //border-radius: 4px;
 //outline: none;
 //padding: 20px;

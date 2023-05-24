@@ -4,7 +4,7 @@ import Seat from '../componentsSelectorAsientos/Seat'
 
 export default function SeatSelector() {
   return (
-    <div> <div>SeatSelector3</div>
+    <div>
     <GlobalStyles/>
     <Seat/>
     </div>

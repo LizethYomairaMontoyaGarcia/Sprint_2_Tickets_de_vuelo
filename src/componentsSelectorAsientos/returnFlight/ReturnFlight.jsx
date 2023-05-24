@@ -1,10 +1,15 @@
 import React from "react";
 import {
-  AisleArrival,
-  BackSeats,
+  DivStyledReturn,
+  StyledReturn,
+  ContainerReturn,
+  ButtonReturn,
+  PositioNumbering,
+  PositioNumberingSpace,
+  Seats,
   ReturnPostButton,
   Column2Arrival,
-  Column,
+  ColumnReturn ,
   ReferencePost,
   RowSeats,
   SubtitleReturn,
@@ -13,40 +18,41 @@ import {
 const ReturnFlight = () => {
   return (
     <>
-      <div>
-        <div>
+     <DivStyledReturn>
+      <StyledReturn>
+        <ContainerReturn>
           <h1>Vuelo de Regreso</h1>
-          <button>Cambiar vuelo</button>
-        </div>
+          <ButtonReturn>Cambiar vuelo</ButtonReturn>
+        </ContainerReturn>
         <h2>Miercoles 8 dic 2023</h2>
         <h4>Culiacan a cd. mex(ADZ)</h4>
         <p>Selecciona tus Asientos</p>
-      </div>
+      </StyledReturn>
 
       <ReferencePost>
-        <Column>
+        <ColumnReturn >
           <RowSeats>
-            <AisleArrival>A</AisleArrival>
-            <AisleArrival>B</AisleArrival>
-            <AisleArrival>C</AisleArrival>
+            <PositioNumbering>A</PositioNumbering>
+            <PositioNumbering>B</PositioNumbering>
+            <PositioNumbering>C</PositioNumbering>
           </RowSeats>
-        </Column>
-        <Column>
-          <AisleArrival></AisleArrival>
-        </Column>
-        <Column>
+        </ColumnReturn >
+        <ColumnReturn >
+          <PositioNumberingSpace></PositioNumberingSpace>
+        </ColumnReturn >
+        <ColumnReturn >
           <RowSeats>
-            <AisleArrival>D</AisleArrival>
-            <AisleArrival>E</AisleArrival>
-            <AisleArrival>F</AisleArrival>
+            <PositioNumbering>D</PositioNumbering>
+            <PositioNumbering>E</PositioNumbering>
+            <PositioNumbering>F</PositioNumbering>
           </RowSeats>
-        </Column>
+        </ColumnReturn >
       </ReferencePost>
       <SubtitleReturn>
         <h5>Salida Rapida</h5>
       </SubtitleReturn>
-      <BackSeats>
-        <Column>
+      <Seats>
+        <ColumnReturn >
           <RowSeats>
             <ReturnPostButton></ReturnPostButton>
             <ReturnPostButton></ReturnPostButton>
@@ -72,15 +78,15 @@ const ReturnFlight = () => {
             <ReturnPostButton></ReturnPostButton>
             <ReturnPostButton></ReturnPostButton>
           </RowSeats>
-        </Column>
+        </ColumnReturn >
         <Column2Arrival>
-          <ReturnPostButton>1</ReturnPostButton>
-          <ReturnPostButton>3</ReturnPostButton>
-          <ReturnPostButton>4</ReturnPostButton>
-          <ReturnPostButton>2</ReturnPostButton>
-          <ReturnPostButton>5</ReturnPostButton>
+          <PositioNumbering>1</PositioNumbering>
+          <PositioNumbering>3</PositioNumbering>
+          <PositioNumbering>4</PositioNumbering>
+          <PositioNumbering>2</PositioNumbering>
+          <PositioNumbering>5</PositioNumbering>
         </Column2Arrival>
-        <Column>
+        <ColumnReturn >
           <RowSeats>
             <ReturnPostButton></ReturnPostButton>
             <ReturnPostButton></ReturnPostButton>
@@ -106,13 +112,13 @@ const ReturnFlight = () => {
             <ReturnPostButton></ReturnPostButton>
             <ReturnPostButton></ReturnPostButton>
           </RowSeats>
-        </Column>
-      </BackSeats>
+        </ColumnReturn >
+      </Seats>
       <SubtitleReturn>
         <h5>Estándar</h5>
       </SubtitleReturn>
-      <BackSeats>
-        <Column>
+      <Seats>
+        <ColumnReturn >
           <RowSeats>
             <ReturnPostButton></ReturnPostButton>
             <ReturnPostButton></ReturnPostButton>
@@ -138,15 +144,15 @@ const ReturnFlight = () => {
             <ReturnPostButton></ReturnPostButton>
             <ReturnPostButton></ReturnPostButton>
           </RowSeats>
-        </Column>
+        </ColumnReturn >
         <Column2Arrival>
-          <AisleArrival>6</AisleArrival>
-          <AisleArrival>7</AisleArrival>
-          <AisleArrival>8</AisleArrival>
-          <AisleArrival>9</AisleArrival>
-          <AisleArrival>10</AisleArrival>
+          <PositioNumbering>6</PositioNumbering>
+          <PositioNumbering>7</PositioNumbering>
+          <PositioNumbering>8</PositioNumbering>
+          <PositioNumbering>9</PositioNumbering>
+          <PositioNumbering>10</PositioNumbering>
         </Column2Arrival>
-        <Column>
+        <ColumnReturn >
           <RowSeats>
             <ReturnPostButton></ReturnPostButton>
             <ReturnPostButton></ReturnPostButton>
@@ -172,8 +178,9 @@ const ReturnFlight = () => {
             <ReturnPostButton></ReturnPostButton>
             <ReturnPostButton></ReturnPostButton>
           </RowSeats>
-        </Column>
-      </BackSeats>
+        </ColumnReturn >
+      </Seats>
+      </DivStyledReturn>
     </>
   );
 };

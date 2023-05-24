@@ -1,7 +1,13 @@
 import React from "react";
 import {
-  AisleArrival,
-  BackSeats,
+  DivStyledExit,
+  StyledExit,
+  ContainerExit,
+  ExitStandard,
+  ButtonExit,
+  PositioNumbering,
+  PositioNumberingSpace,
+  Seats,
   ExitPostButton,
   Column2Arrival,
   ColumnExit,
@@ -13,39 +19,40 @@ import {
 const ExitFlight = () => {
   return (
     <>
-      <div>
-        <div>
+    <DivStyledExit>
+      <StyledExit>
+        <ContainerExit>
           <h1>Vuelo de Salida</h1>
-          <button>Cambiar vuelo</button>
-        </div>
+          <ButtonExit>Cambiar vuelo</ButtonExit>
+        </ContainerExit>
         <h2>Martes 30 nov 2021</h2>
         <h4>Cd. Mexico a Culiacan(ADZ)</h4>
         <p>Selecciona tus Asientos</p>
-      </div>
+      </StyledExit>
 
       <ReferencePost>
         <ColumnExit>
           <RowSeats>
-            <AisleArrival>A</AisleArrival>
-            <AisleArrival>B</AisleArrival>
-            <AisleArrival>C</AisleArrival>
+            <PositioNumbering>A</PositioNumbering>
+            <PositioNumbering>B</PositioNumbering>
+            <PositioNumbering>C</PositioNumbering>
           </RowSeats>
         </ColumnExit>
         <ColumnExit>
-          <AisleArrival></AisleArrival>
+          <PositioNumberingSpace></PositioNumberingSpace>
         </ColumnExit>
         <ColumnExit>
           <RowSeats>
-            <AisleArrival>D</AisleArrival>
-            <AisleArrival>E</AisleArrival>
-            <AisleArrival>F</AisleArrival>
+            <PositioNumbering>D</PositioNumbering>
+            <PositioNumbering>E</PositioNumbering>
+            <PositioNumbering>F</PositioNumbering>
           </RowSeats>
         </ColumnExit>
       </ReferencePost>
       <SubtitleReturn>
-        <h5>Salida Rapida</h5>
+        <ExitStandard>Salida Rapida</ExitStandard>
       </SubtitleReturn>
-      <BackSeats>
+      <Seats>
         <ColumnExit>
           <RowSeats>
             <ExitPostButton></ExitPostButton>
@@ -74,11 +81,11 @@ const ExitFlight = () => {
           </RowSeats>
         </ColumnExit>
         <Column2Arrival>
-          <ExitPostButton>1</ExitPostButton>
-          <ExitPostButton>3</ExitPostButton>
-          <ExitPostButton>4</ExitPostButton>
-          <ExitPostButton>2</ExitPostButton>
-          <ExitPostButton>5</ExitPostButton>
+          <PositioNumbering>1</PositioNumbering>
+          <PositioNumbering>3</PositioNumbering>
+          <PositioNumbering>4</PositioNumbering>
+          <PositioNumbering>2</PositioNumbering>
+          <PositioNumbering>5</PositioNumbering>
         </Column2Arrival>
         <ColumnExit>
           <RowSeats>
@@ -107,11 +114,11 @@ const ExitFlight = () => {
             <ExitPostButton></ExitPostButton>
           </RowSeats>
         </ColumnExit>
-      </BackSeats>
+      </Seats>
       <SubtitleReturn>
-        <h5>Estándar</h5>
+        <ExitStandard>Estándar</ExitStandard>
       </SubtitleReturn>
-      <BackSeats>
+      <Seats>
         <ColumnExit>
           <RowSeats>
             <ExitPostButton></ExitPostButton>
@@ -140,11 +147,11 @@ const ExitFlight = () => {
           </RowSeats>
         </ColumnExit>
         <Column2Arrival>
-          <AisleArrival>6</AisleArrival>
-          <AisleArrival>7</AisleArrival>
-          <AisleArrival>8</AisleArrival>
-          <AisleArrival>9</AisleArrival>
-          <AisleArrival>10</AisleArrival>
+          <PositioNumbering>6</PositioNumbering>
+          <PositioNumbering>7</PositioNumbering>
+          <PositioNumbering>8</PositioNumbering>
+          <PositioNumbering>9</PositioNumbering>
+          <PositioNumbering>10</PositioNumbering>
         </Column2Arrival>
         <ColumnExit>
           <RowSeats>
@@ -173,7 +180,8 @@ const ExitFlight = () => {
             <ExitPostButton></ExitPostButton>
           </RowSeats>
         </ColumnExit>
-      </BackSeats>
+      </Seats>
+      </DivStyledExit>
     </>
   );
 };
