@@ -10,8 +10,8 @@ import {
 import Passenger from "./passeger/Passenger";
 import Plane from "../../images/plane.svg";
 import { useNavigate } from "react-router-dom";
-import CalendarExit from "./calendar/CalendarFormExit";
-import CalendarIncome from "./calendar/CalendarFormIncome";
+import CalendarExit from "./calendar/calendarExit/CalendarFormExit";
+import CalendarIncome from "./calendar/calendarIncome/CalendarFormIncome";
 import Origin from "./origin/OriginCity";
 import Destination from "./destination/Destination";
 import CalendarIcono from "../../images/dateCalendar.png";
@@ -25,10 +25,6 @@ export function Formulario() {
   };
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -49,7 +45,7 @@ export function Formulario() {
             <p>Seleccione un destino</p>
           </div>
         </Container>
-        <ContainerTwo onClick={openModal}>
+        <ContainerTwo >
           <div>
             <Calendar src={CalendarIcono} alt="calendario" />
             <CalendarExit isOpen={modalIsOpen} onRequestClose={closeModal} />
