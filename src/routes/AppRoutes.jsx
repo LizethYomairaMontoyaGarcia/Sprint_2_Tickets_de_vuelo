@@ -11,7 +11,7 @@ const AppRoutes = () => {
       <Routes>
           <Route path="/" element={<App/>} />
           <Route path="flightSelector" element={<FlightSelector/>} />
-          <Route path="seatSelector" component={SeatSelector} />
+          <Route path="seatSelector" element={<SeatSelector/>} />
           <Route path="/" component={<Navigate to="/FlightSearch" />} />
         <Route path="*" element={<NotFoundPage/>} />
       </Routes>
