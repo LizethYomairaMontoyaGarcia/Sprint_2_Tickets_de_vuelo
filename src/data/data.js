@@ -21,7 +21,7 @@ export const footerInfo = [
     id: 3,
     img: grupos,
     name: "Grupos",
-    description: "Obén una cotización para grupos de mas de 9 personas",
+    description: "Obtén una cotización para grupos de mas de 9 personas",
   },
   {
     id: 4,

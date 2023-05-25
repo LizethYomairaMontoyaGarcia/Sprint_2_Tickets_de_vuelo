@@ -2,12 +2,13 @@ import React from "react";
 import { ContainerFooter } from "./FooterStyles";
 import { ContainerImg } from "./FooterStyles";
 import { Position } from "./FooterStyles";
+import { H1 } from "./FooterStyles";
 import { footerInfo } from "../../data/data";
 
 const Footer = () => {
   return (
     <ContainerFooter>
-      <h1>Servicios disponibles</h1>
+      <H1>Servicios disponibles</H1>
       <Position>
         {footerInfo.map((item) => (
           <ContainerImg key={item.id}>
