@@ -124,7 +124,7 @@ export const ReturnPostButton = styled.button`
 `;
 
 //no quiere centrar el texto
-export const ExitStandard = styled.h3`
+export const ReturntStandar = styled.h3`
  align-items:center;
  display:flex;
  text-align:center;
