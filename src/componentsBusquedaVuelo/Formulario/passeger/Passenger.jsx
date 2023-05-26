@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ContainerPassenger,
   Button,
@@ -23,12 +23,28 @@ const Passenger = () => {
     baby: 0,
   });
 
-//abrir el modal 
+  // Leer los valores almacenados en el sessionStorage al cargar el componente
+  useEffect(() => {
+    const storedPassengers = sessionStorage.getItem("passengers");
+    if (storedPassengers) {
+      const parsedPassengers = JSON.parse(storedPassengers);
+      setAdults(parsedPassengers.adults);
+      setChildren(parsedPassengers.children);
+      setBaby(parsedPassengers.baby);
+      setSelectedPassengers(parsedPassengers);
+    }
+  }, []);
+
+  // Guardar los valores seleccionados en el sessionStorage
+  useEffect(() => {
+    const passengersToStore = JSON.stringify(selectedPassengers);
+    sessionStorage.setItem("passengers", passengersToStore);
+  }, [selectedPassengers]);
+
   const toggleModal = () => {
     setModalOpen(!modalOpen);
   };
 
-  //incrementar pasajeros
   const increasePassengerCount = (type) => {
     if (type === "adults") {
       setAdults(adults + 1);
@@ -39,7 +55,6 @@ const Passenger = () => {
     }
   };
 
-  // reduce la cantidad de pasajeros.
   const decreasePassengerCount = (type) => {
     if (type === "adults" && adults > 0) {
       setAdults(adults - 1);
@@ -50,7 +65,6 @@ const Passenger = () => {
     }
   };
 
-  //boton de confirmar
   const handleModalConfirm = () => {
     setSelectedPassengers({
       adults,
@@ -65,8 +79,7 @@ const Passenger = () => {
       <Button onClick={toggleModal}>Pasajeros</Button>
 
       <div>
-        {selectedPassengers.adults} Adultos, {selectedPassengers.children}{" "}
-        Niños, {selectedPassengers.baby} Bebés
+        {selectedPassengers.adults} Adultos, {selectedPassengers.children} Niños, {selectedPassengers.baby} Bebés
       </div>
 
       {modalOpen && (
@@ -78,15 +91,11 @@ const Passenger = () => {
                 <p>(13 + años)</p>
               </DivPersonAge>
               <Div>
-                <PassengerButton
-                  onClick={() => decreasePassengerCount("adults")}
-                >
+                <PassengerButton onClick={() => decreasePassengerCount("adults")}>
                   -
                 </PassengerButton>
                 <span>{adults}</span>
-                <PassengerButton
-                  onClick={() => increasePassengerCount("adults")}
-                >
+                <PassengerButton onClick={() => increasePassengerCount("adults")}>
                   +
                 </PassengerButton>
               </Div>

@@ -5,9 +5,9 @@ import ReturnFlight from './returnFlight/ReturnFlight'
 function Seat() {
   return (
     <div>
-      SeaSelector
     <ExitFlight/>
     <ReturnFlight/>
+    
     </div>
   )
 }
