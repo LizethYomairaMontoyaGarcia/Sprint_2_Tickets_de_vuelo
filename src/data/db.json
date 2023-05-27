@@ -38,12 +38,21 @@
             "code": "AXM",
             "city": "Armenia"
           },
-          "departure_date": "2023-07-15",
-          "departure_time": "10:00:00",
-          "arrival_date": "2023-07-15",
-          "arrival_time": "15:00:00",
-          "duration": "05:00",
-          "price": "200.000",
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "duration": "05:00"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:00:00",
+            "duration": "05:00"
+          },
+          "price": "400.000",
 
           "scales": {
             "0": true,
@@ -108,11 +117,20 @@
             "code": "BOG",
             "city": "Bogotá"
           },
-          "departure_date": "2023-07-15",
-          "departure_time": "13:30:00",
-          "arrival_date": "2023-07-15",
-          "arrival_time": "15:45:00",
-          "duration": "02:15",
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "duration": "05:00"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:00:00",
+            "duration": "05:00"
+          },
           "price": "250.000",
           "scales": {
             "0": true,
@@ -176,11 +194,20 @@
             "code": "CTG",
             "city": "Cartagena"
           },
-          "departure_date": "2023-07-15",
-          "departure_time": "13:00:00",
-          "arrival_date": "2023-07-15",
-          "arrival_time": "16:00:00",
-          "duration": "03:00",
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "duration": "05:00"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:00:00",
+            "duration": "05:00"
+          },
           "price": "400.000",
           "scales": {
             "0": true,
@@ -244,11 +271,20 @@
             "code": "ACZ",
             "city": "San Andres"
           },
-          "departure_date": "2023-07-15",
-          "departure_time": "13:00:00",
-          "arrival_date": "2023-07-15",
-          "arrival_time": "17:00:00",
-          "duration": "04:00",
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "duration": "05:00"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:00:00",
+            "duration": "05:00"
+          },
           "price": "500.000",
           "scales": {
             "0": true,
@@ -312,11 +348,20 @@
             "code": "PEI",
             "city": "Pereira"
           },
-          "departure_date": "2023-07-15",
-          "departure_time": "12:00:00",
-          "arrival_date": "2023-07-15",
-          "arrival_time": "15:00:00",
-          "duration": "03:00",
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "duration": "05:00"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:00:00",
+            "duration": "05:00"
+          },
           "price": "259.000",
           "scales": {
             "0": true,
@@ -376,8 +421,6 @@
       ]
     }
   ],
-
-
 
   "booking": [
     {

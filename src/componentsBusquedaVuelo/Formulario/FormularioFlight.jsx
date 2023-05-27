@@ -16,7 +16,7 @@ import Origin from "./origin/OriginCity";
 import Destination from "./destination/Destination";
 import CalendarIcono from "../../images/dateCalendar.png";
 
-export function Formulario() {
+export function Formulario({ viaje }) {
   const navigate = useNavigate();
 
   const handleButton = () => {
@@ -30,8 +30,7 @@ export function Formulario() {
     setModalIsOpen(false);
   };
 
-  //para el calendario de retorno 
-
+  //para el calendario de retorno
 
   return (
     <>
@@ -42,25 +41,32 @@ export function Formulario() {
             <p>Origen</p>
           </div>
         </Container>
-        <Container>
-          <div>
-            <Destination />
-            <p>Seleccione un destino</p>
-          </div>
-        </Container>
-        <ContainerTwo >
+
+       
+          <Container>
+            <div>
+              <Destination />
+              <p>Seleccione un destino</p>
+            </div>
+          </Container>
+        
+
+        <ContainerTwo>
           <div>
             <Calendar src={CalendarIcono} alt="calendario" />
             <CalendarExit isOpen={modalIsOpen} onRequestClose={closeModal} />
           </div>
         </ContainerTwo>
 
-        <ContainerTwo >
-          <div>
-            <Calendar src={CalendarIcono} alt="calendario" />
-            <CalendarIncome />
-          </div>
-        </ContainerTwo>
+        {/* Campo Hora de Regreso */}
+        {viaje === "redondo" && (
+          <ContainerTwo>
+            <div>
+              <Calendar src={CalendarIcono} alt="calendario" />
+              <CalendarIncome />
+            </div>
+          </ContainerTwo>
+        )}
 
         <ContainerTwo>
           <div>

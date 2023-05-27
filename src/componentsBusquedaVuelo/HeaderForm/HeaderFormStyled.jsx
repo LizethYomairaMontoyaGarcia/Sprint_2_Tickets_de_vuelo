@@ -22,20 +22,6 @@ export const StyleHeaderForm = styled.div`
   }
 `;
 
-export const ButtonGeneral = styled.button`
-  border: none;
-  padding: 10px 10px;
-  font-size: 1rem;
-  :hover {
-    background-color: #9e1071;
-    cursor: pointer;
-    color: white;
-    border-radius: 7px;
-  }
-  @media screen and (max-width: 765px) {
-    font-size: 0.83rem;
-  }
-`;
 
 export const StyledButtonForm = styled.div`
   display: flex;

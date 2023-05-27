@@ -10,7 +10,7 @@ import {
 import { AiOutlineClose } from "react-icons/ai";
 import { ModalDestinationCity } from "../../destination/DestinationStyled";
 
-const CalendarExit = () => {
+const CalendarIncome = () => {
   const today = new Date();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
@@ -121,5 +121,5 @@ const CalendarExit = () => {
   );
 };
 
-export default CalendarExit;
+export default CalendarIncome;
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Modal,
   DateClose,
@@ -9,6 +9,7 @@ import {
 } from "./CalendarExitStyled";
 import { AiOutlineClose } from "react-icons/ai";
 import { ModalDestinationCity } from "../../destination/DestinationStyled";
+import axios from "axios";
 
 const CalendarExit = () => {
   const today = new Date();
@@ -17,6 +18,49 @@ const CalendarExit = () => {
   const [selectedYear, setSelectedYear] = useState(today.getFullYear());
   const [selectedDay, setSelectedDay] = useState("");
   const [showDate, setShowDate] = useState(false);
+  const [storedCityDestination, setStoredCityDestination] = useState("");
+  //const [citiesOrigin, setCitiesOrigin] = useState([]);
+  const [citiesDestination, setCitiesDestination] = useState([]);
+
+  const dateExit = async () => {
+    try {
+      const citiesOrigin = sessionStorage.getItem("selectedCityOrigin");
+      const storedCityDestination = sessionStorage.getItem(
+        "selectedCityDestination"
+      );
+      const response = await axios.get("http://localhost:3000/origins");
+      if (citiesOrigin && storedCityDestination) {
+        console.log("::response data calenda",response.data)
+        const vueloDeseado = response.data.filter((item) =>
+          item.departure_airport.city
+            .toLowerCase()
+            .includes(citiesOrigin.toLowerCase())
+        ).map((item) =>
+              item.destinations.filter((destination) =>
+                destination.arrival_airport.city
+                  .toLowerCase()
+                  .includes(storedCityDestination.toLowerCase())
+              )
+            )
+            .flat();
+          setCitiesDestination(vueloDeseado);
+          console.log("::VUELO DESEADO",vueloDeseado )
+        }
+      
+    } catch (error) {
+      console.error("Error en la petición:", error);
+    }
+  };
+
+  useEffect(() => {
+    // Obtener el valor guardado en el Session Storage del destination
+    const storedCityDestination = sessionStorage.getItem(
+      "selectedCityDestination"
+    );
+    if (storedCityDestination) {
+      setStoredCityDestination(storedCityDestination);
+    }
+  }, []);
 
   const handleMonthChange = (event) => {
     setSelectedMonth(parseInt(event.target.value));
@@ -55,7 +99,9 @@ const CalendarExit = () => {
 
   return (
     <div>
-      <p onClick={openModal}>Salida</p>
+      <span onClick={() => { dateExit(); openModal(); }}>----</span>
+      <p >Salida</p>
+
       <div>
         {showDate && <p>{formattedDate}</p>}
 
