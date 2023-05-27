@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 import {
   H2l,
   ModalOriginCity,
   Modal,
-  ModalContent ,
+  ModalContent,
   CloseIcon,
   ModalTitleCity,
   SearchContainer,
@@ -13,25 +13,38 @@ import {
   SearchIcon,
   ListCity,
   ItemCity,
-} from "./OriginCitystyled"
+} from "./OriginCitystyled";
+import axios from "axios";
 
 const Origin = () => {
+  useEffect(() => {
+    const fetchDataOrigin = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/origins");
+        setCities(
+          response.data.map((item) => item.departure_airport.city)
+        );
+        console.log("Respuesta del servidor:", response.data);
+      } catch (error) {
+        console.error("Error en la petición:", error);
+      }
+    };
+
+    fetchDataOrigin();
+  }, []);
+
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const cities = [
-    "Medellin",
-    "Cali",
-    "Cartagena",
-    "Pereira",
-    "San Luis",
-    "Chile",
-    "Santa Marta",
-    "Estados Unidos",
-    "Valledupar",
-    "Armenia",
-    "Guajira",
-  ];
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    // Obtener el valor guardado en el Session Storage al cargar el componente
+    const storedCity = sessionStorage.getItem("selectedCityOrigin");
+    if (storedCity) {
+      setSelectedCity(storedCity);
+    }
+  }, []);
 
   const openModal = () => {
     setShowModal(true);
@@ -43,6 +56,7 @@ const Origin = () => {
 
   const handleCityClick = (city) => {
     setSelectedCity(city);
+    sessionStorage.setItem("selectedCityOrigin", city); // Guardar el valor en el Session Storage
     closeModal();
   };
 
@@ -63,12 +77,12 @@ const Origin = () => {
       {showModal && (
         <ModalOriginCity>
           <Modal>
-            <ModalContent >
+            <ModalContent>
               <ModalTitleCity>Punto de partida</ModalTitleCity>
               <CloseIcon onClick={closeModal}>
                 <AiOutlineClose size={24} />
               </CloseIcon>
-            </ModalContent >
+            </ModalContent>
 
             <SearchContainer>
               <SearchIcon>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 import {
@@ -15,24 +15,59 @@ import {
   ListCity,
   ItemCity,
 } from "./DestinationStyled";
+import axios from "axios";
 
 const Destination = () => {
+ //llamamos la onformacion que hay en el sesion storage del selectedCityOrigin y con esta informacion hacemos un mapero para poder pintar
+ // la informacion de destinations que tiene este, en este caso city para que al usurio le despliegue la lista de cuidades y pueda selecionar una de ella 
+    const fetchDataDestination = async () => {
+      try {
+        const storedCityOrigin = sessionStorage.getItem("selectedCityOrigin");
+        const response = await axios.get("http://localhost:3000/origins");
+
+        if (storedCityOrigin) {
+          const cities = response.data
+            .filter((item) =>
+              item.departure_airport.city
+                .toLowerCase()
+                .includes(storedCityOrigin.toLowerCase())
+            )
+            .map((item) => item.destinations.map((destinations) => destinations.arrival_airport.city))
+            .flat();
+
+          setCities(cities);
+        } else {
+          setCities([]);
+        }
+
+        console.log("Respuesta del servidor del destino:", response.data);
+      } catch (error) {
+        console.error("Error en la petición del destino :", error);
+      }
+    };
+
+    
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCityOrigin, setSelectedCityOrigin] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const cities = [
-    "Medellin",
-    "Cali",
-    "Cartagena",
-    "Pereira",
-    "San Luis",
-    "Chile",
-    "Santa Marta",
-    "Estados Unidos",
-    "Valledupar",
-    "Armenia",
-    "Guajira",
-  ];
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    // Obtener el valor guardado en el Session Storage del origin
+    const storedCityOrigin = sessionStorage.getItem("selectedCityOrigin");
+    if (storedCityOrigin) {
+      setSelectedCityOrigin(storedCityOrigin);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Obtener el valor guardado en el Session Storage al cargar el componente
+    const storedCity = sessionStorage.getItem("selectedCityDestination");
+    if (storedCity) {
+      setSelectedCity(storedCity);
+    }
+  }, []);
 
   const openModal = () => {
     setShowModal(true);
@@ -44,6 +79,7 @@ const Destination = () => {
 
   const handleCityClick = (city) => {
     setSelectedCity(city);
+    sessionStorage.setItem("selectedCityDestination", city); // Guardar el valor en el Session Storage
     closeModal();
   };
 
@@ -57,7 +93,7 @@ const Destination = () => {
         {selectedCity ? (
           <H2>Ciudad de {selectedCity}</H2>
         ) : (
-          <SpanDestination>----</SpanDestination>
+          <SpanDestination onClick={()=> fetchDataDestination()}>----</SpanDestination>
         )}
       </div>
 

@@ -1,0 +1,414 @@
+{
+  "origins": [
+    {
+      "id": 1,
+      "airline": {
+        "name": "Avianca",
+        "baggages": [
+          {
+            "id": 1,
+            "description": "one_object",
+            "price": "30.000"
+          },
+          {
+            "id": 2,
+            "description": "hand_baggage",
+            "price": "60.000"
+          },
+
+          {
+            "id": 3,
+            "description": "baggage_25kg",
+            "price": "100.000"
+          }
+        ]
+      },
+      "flight_code": "AA123",
+      "departure_airport": {
+        "name": "Aeropueto Internacional Jose María Cordoba",
+        "code": "MDE",
+        "city": "Rionegro"
+      },
+
+      "destinations": [
+        {
+          "id": 1,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Edén",
+            "code": "AXM",
+            "city": "Armenia"
+          },
+          "departure_date": "2023-07-15",
+          "departure_time": "10:00:00",
+          "arrival_date": "2023-07-15",
+          "arrival_time": "15:00:00",
+          "duration": "05:00",
+          "price": "200.000",
+
+          "scales": {
+            "0": true,
+            "1": false
+          },
+          "seats": [
+            {
+              "id": "1A",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1B",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1C",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1D",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1E",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1F",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            }
+          ]
+        },
+
+        {
+          "id": 2,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Dorado",
+            "code": "BOG",
+            "city": "Bogotá"
+          },
+          "departure_date": "2023-07-15",
+          "departure_time": "13:30:00",
+          "arrival_date": "2023-07-15",
+          "arrival_time": "15:45:00",
+          "duration": "02:15",
+          "price": "250.000",
+          "scales": {
+            "0": true,
+            "1": false
+          },
+          "seats": [
+            {
+              "id": "1A",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1B",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1C",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1D",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1E",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1F",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Rafael Nuñez",
+            "code": "CTG",
+            "city": "Cartagena"
+          },
+          "departure_date": "2023-07-15",
+          "departure_time": "13:00:00",
+          "arrival_date": "2023-07-15",
+          "arrival_time": "16:00:00",
+          "duration": "03:00",
+          "price": "400.000",
+          "scales": {
+            "0": true,
+            "1": false
+          },
+          "seats": [
+            {
+              "id": "1A",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1B",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1C",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1D",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1E",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1F",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Gustavo Rojas Pinilla",
+            "code": "ACZ",
+            "city": "San Andres"
+          },
+          "departure_date": "2023-07-15",
+          "departure_time": "13:00:00",
+          "arrival_date": "2023-07-15",
+          "arrival_time": "17:00:00",
+          "duration": "04:00",
+          "price": "500.000",
+          "scales": {
+            "0": true,
+            "1": false
+          },
+          "seats": [
+            {
+              "id": "1A",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1B",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1C",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1D",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1E",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1F",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Matecaña",
+            "code": "PEI",
+            "city": "Pereira"
+          },
+          "departure_date": "2023-07-15",
+          "departure_time": "12:00:00",
+          "arrival_date": "2023-07-15",
+          "arrival_time": "15:00:00",
+          "duration": "03:00",
+          "price": "259.000",
+          "scales": {
+            "0": true,
+            "1": false
+          },
+          "seats": [
+            {
+              "id": "1A",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1B",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1C",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1D",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1E",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            },
+            {
+              "id": "1F",
+              "status": {
+                "available": true,
+                "reserved": false,
+                "selected": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+
+
+  "booking": [
+    {
+      "id": "1",
+      "passenger_detail": {
+        "name": "",
+        "last_name": "",
+        "phone": "",
+        "email": "",
+        "document_type": ["CC", "TI", "RC"],
+        "document_number": "",
+        "genre": ["male", "female"]
+      },
+      "departure_flight": "",
+      "arrivale_flight": "",
+      "passengers": {
+        "adults": 0,
+        "children": 0,
+        "baby": 0
+      },
+      "flight_cost": {
+        "flight_price": 0,
+        "baggage_price": 0,
+        "discount_apply": 0,
+        "iva_payment": 0
+      },
+      "optionals_services": {
+        "seat_select": "15.000"
+      },
+      "TUA": "250.000"
+    }
+  ],
+  "buys": []
+}
