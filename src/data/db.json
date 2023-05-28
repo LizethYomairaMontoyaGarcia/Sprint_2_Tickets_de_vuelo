@@ -2,7 +2,7 @@
   "flights": [
     {
       "airline": {
-        "name": "Avianca",
+        "name": "Avianca"
       },
       "flight_code": "AA123",
       "departure_airport": {
