@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Modal,
   DateClose,
@@ -9,6 +9,7 @@ import {
 } from "./CalendarIncomeStyled";
 import { AiOutlineClose } from "react-icons/ai";
 import { ModalDestinationCity } from "../../destination/DestinationStyled";
+import { searchParamsContext } from "../../../../routes/AppRoutes";
 
 const CalendarIncome = () => {
   const today = new Date();
@@ -16,7 +17,10 @@ const CalendarIncome = () => {
   const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
   const [selectedYear, setSelectedYear] = useState(today.getFullYear());
   const [selectedDay, setSelectedDay] = useState("");
-  const [showDate, setShowDate] = useState(false);
+  //const [dateCalendarIcome, setdateCalendarIcome] = useState(false);
+  //global
+  const { dateCalendarIcome, setdateCalendarIcome } =
+    useContext(searchParamsContext);
 
   const handleMonthChange = (event) => {
     setSelectedMonth(parseInt(event.target.value));
@@ -28,14 +32,12 @@ const CalendarIncome = () => {
 
   const handleDayClick = (day) => {
     setSelectedDay(day);
-    setShowDate(true);
     setModalOpen(false);
 
     // Guardar la información en Session Storage
-    sessionStorage.setItem(
-      "selectedDateReturn",
-      JSON.stringify({ day, month: selectedMonth, year: selectedYear })
-    );
+    const infoDateIcome = { day, month: selectedMonth, year: selectedYear };
+    setdateCalendarIcome(infoDateIcome);
+    sessionStorage.setItem("selectedDateReturn", JSON.stringify(infoDateIcome));
   };
 
   const daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
@@ -57,7 +59,7 @@ const CalendarIncome = () => {
     <div>
       <p onClick={openModal}>Regreso</p>
       <div>
-        {showDate && <p>{formattedDate}</p>}
+        {dateCalendarIcome && <p>{formattedDate}</p>}
 
         {modalOpen && (
           <ModalDestinationCity>
@@ -122,4 +124,3 @@ const CalendarIncome = () => {
 };
 
 export default CalendarIncome;
-

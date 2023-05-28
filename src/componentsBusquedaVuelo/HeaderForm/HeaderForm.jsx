@@ -11,6 +11,11 @@ const ButtonGeneral = styled.button`
   border: none;
   padding: 10px 10px;
   font-size: 1rem;
+  @media screen and (max-width: 765px) {
+    width: 80px;
+    font-size: 0.5rem;
+    width:70px;
+  }
 `;
 
 export default function HeaderForm() {
