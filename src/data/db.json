@@ -1,27 +1,8 @@
 {
-  "origins": [
+  "flights": [
     {
-      "id": 1,
       "airline": {
         "name": "Avianca",
-        "baggages": [
-          {
-            "id": 1,
-            "description": "one_object",
-            "price": "30.000"
-          },
-          {
-            "id": 2,
-            "description": "hand_baggage",
-            "price": "60.000"
-          },
-
-          {
-            "id": 3,
-            "description": "baggage_25kg",
-            "price": "100.000"
-          }
-        ]
       },
       "flight_code": "AA123",
       "departure_airport": {
@@ -57,59 +38,8 @@
           "scales": {
             "0": true,
             "1": false
-          },
-          "seats": [
-            {
-              "id": "1A",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1B",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1C",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1D",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1E",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1F",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            }
-          ]
+          }
         },
-
         {
           "id": 2,
           "arrival_airport": {
@@ -135,57 +65,7 @@
           "scales": {
             "0": true,
             "1": false
-          },
-          "seats": [
-            {
-              "id": "1A",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1B",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1C",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1D",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1E",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1F",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            }
-          ]
+          }
         },
         {
           "id": 3,
@@ -212,57 +92,7 @@
           "scales": {
             "0": true,
             "1": false
-          },
-          "seats": [
-            {
-              "id": "1A",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1B",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1C",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1D",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1E",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1F",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            }
-          ]
+          }
         },
         {
           "id": 4,
@@ -289,57 +119,7 @@
           "scales": {
             "0": true,
             "1": false
-          },
-          "seats": [
-            {
-              "id": "1A",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1B",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1C",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1D",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1E",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1F",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            }
-          ]
+          }
         },
         {
           "id": 5,
@@ -366,62 +146,30 @@
           "scales": {
             "0": true,
             "1": false
-          },
-          "seats": [
-            {
-              "id": "1A",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1B",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1C",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1D",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1E",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            },
-            {
-              "id": "1F",
-              "status": {
-                "available": true,
-                "reserved": false,
-                "selected": false
-              }
-            }
-          ]
+          }
+          
         }
       ]
     }
   ],
+  "baggages": [
+    {
+      "id": 1,
+      "description": "one_object",
+      "price": "30.000"
+    },
+    {
+      "id": 2,
+      "description": "hand_baggage",
+      "price": "60.000"
+    },
 
+    {
+      "id": 3,
+      "description": "baggage_25kg",
+      "price": "100.000"
+    }
+  ],
   "booking": [
     {
       "id": "1",
@@ -453,5 +201,54 @@
       "TUA": "250.000"
     }
   ],
-  "buys": []
+  "seats": [
+      {
+        "id": "1A",
+        "status": {
+          "available": true,
+          "reserved": false,
+          "selected": false
+        }
+      },
+      {
+        "id": "1B",
+        "status": {
+          "available": true,
+          "reserved": false,
+          "selected": false
+        }
+      },
+      {
+        "id": "1C",
+        "status": {
+          "available": true,
+          "reserved": false,
+          "selected": false
+        }
+      },
+      {
+        "id": "1D",
+        "status": {
+          "available": true,
+          "reserved": false,
+          "selected": false
+        }
+      },
+      {
+        "id": "1E",
+        "status": {
+          "available": true,
+          "reserved": false,
+          "selected": false
+        }
+      },
+      {
+        "id": "1F",
+        "status": {
+          "available": true,
+          "reserved": false,
+          "selected": false
+        }
+      }
+    ]
 }
