@@ -7,13 +7,13 @@ import NotFoundPage from "../pages/NotFoundPage";
 
 const AppRoutes = () => {
   return (
-<BrowserRouter>
+    <BrowserRouter>
       <Routes>
-          <Route path="/" element={<App/>} />
-          <Route path="flightSelector" element={<FlightSelector/>} />
-          <Route path="seatSelector" element={<SeatSelector/>} />
-          <Route path="/" component={<Navigate to="/FlightSearch" />} />
-        <Route path="*" element={<NotFoundPage/>} />
+        <Route path="/" element={<App />} />
+        <Route path="/flightSelector" element={<FlightSelector />} />
+        <Route path="/seatSelector" element={<SeatSelector />} />
+        <Route path="/" element={<Navigate to="/FlightSearch" />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
