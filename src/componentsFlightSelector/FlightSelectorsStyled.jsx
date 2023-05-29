@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const FlightSelectorContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  background-color: #f2f2f2; /* Color de fondo gris claro */
 `;
 
 export const VuelosConMaletasColumn = styled.div`
