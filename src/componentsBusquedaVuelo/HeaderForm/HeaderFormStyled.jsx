@@ -33,10 +33,10 @@ export const StyledButtonForm = styled.div`
   margin-bottom: 20px;
   margin-top: 20px;
   @media screen and (max-width: 765px) {
-    width: 35%;
     padding: 5px 10px;
     margin-bottom: 20px;
     margin-top: 20px;
+    width: 70%;
   }
 `;
 
@@ -44,7 +44,7 @@ export const P = styled.p`
   color: Gray;
   font-size: 1.2rem;
   @media screen and (max-width: 765px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `;
 
@@ -53,9 +53,9 @@ export const H1 = styled.h1`
   font-size: 3rem;
   padding: 10px 0;
   font-weight: 900;
-  line-height: 3.7rem;
+  
   @media screen and (max-width: 765px) {
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 `;

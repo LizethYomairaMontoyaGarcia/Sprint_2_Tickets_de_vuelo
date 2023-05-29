@@ -6,6 +6,8 @@ function Seat() {
   return (
     <div>
     <ExitFlight/>
+
+    
     <ReturnFlight/>
     
     </div>

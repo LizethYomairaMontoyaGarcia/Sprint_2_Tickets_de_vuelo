@@ -1,9 +1,8 @@
 {
   "flights": [
     {
-      "airline": {
-        "name": "Avianca"
-      },
+      "id": 1,
+      "airline": "Avianca",
       "flight_code": "AA123",
       "departure_airport": {
         "name": "Aeropueto Internacional Jose María Cordoba",
@@ -33,12 +32,7 @@
             "arrival_time": "13:00:00",
             "duration": "05:00"
           },
-          "price": "400.000",
-
-          "scales": {
-            "0": true,
-            "1": false
-          }
+          "price": "400.000"
         },
         {
           "id": 2,
@@ -61,11 +55,7 @@
             "arrival_time": "13:00:00",
             "duration": "05:00"
           },
-          "price": "250.000",
-          "scales": {
-            "0": true,
-            "1": false
-          }
+          "price": "250.000"
         },
         {
           "id": 3,
@@ -88,12 +78,9 @@
             "arrival_time": "13:00:00",
             "duration": "05:00"
           },
-          "price": "400.000",
-          "scales": {
-            "0": true,
-            "1": false
-          }
+          "price": "400.000"
         },
+
         {
           "id": 4,
           "arrival_airport": {
@@ -115,12 +102,9 @@
             "arrival_time": "13:00:00",
             "duration": "05:00"
           },
-          "price": "500.000",
-          "scales": {
-            "0": true,
-            "1": false
-          }
+          "price": "500.000"
         },
+
         {
           "id": 5,
           "arrival_airport": {
@@ -142,12 +126,7 @@
             "arrival_time": "13:00:00",
             "duration": "05:00"
           },
-          "price": "259.000",
-          "scales": {
-            "0": true,
-            "1": false
-          }
-          
+          "price": "259.000"
         }
       ]
     }
@@ -202,53 +181,53 @@
     }
   ],
   "seats": [
-      {
-        "id": "1A",
-        "status": {
-          "available": true,
-          "reserved": false,
-          "selected": false
-        }
-      },
-      {
-        "id": "1B",
-        "status": {
-          "available": true,
-          "reserved": false,
-          "selected": false
-        }
-      },
-      {
-        "id": "1C",
-        "status": {
-          "available": true,
-          "reserved": false,
-          "selected": false
-        }
-      },
-      {
-        "id": "1D",
-        "status": {
-          "available": true,
-          "reserved": false,
-          "selected": false
-        }
-      },
-      {
-        "id": "1E",
-        "status": {
-          "available": true,
-          "reserved": false,
-          "selected": false
-        }
-      },
-      {
-        "id": "1F",
-        "status": {
-          "available": true,
-          "reserved": false,
-          "selected": false
-        }
+    {
+      "id": "1A",
+      "status": {
+        "available": true,
+        "reserved": false,
+        "selected": false
       }
-    ]
+    },
+    {
+      "id": "1B",
+      "status": {
+        "available": true,
+        "reserved": false,
+        "selected": false
+      }
+    },
+    {
+      "id": "1C",
+      "status": {
+        "available": true,
+        "reserved": false,
+        "selected": false
+      }
+    },
+    {
+      "id": "1D",
+      "status": {
+        "available": true,
+        "reserved": false,
+        "selected": false
+      }
+    },
+    {
+      "id": "1E",
+      "status": {
+        "available": true,
+        "reserved": false,
+        "selected": false
+      }
+    },
+    {
+      "id": "1F",
+      "status": {
+        "available": true,
+        "reserved": false,
+        "selected": false
+      }
+    }
+  ]
 }

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const DetallesReservacion = styled.div`
-  background-color: #f2f2f2;
+  background-color: #fff;
   padding: 10px;
   margin-bottom: 20px;
 `;
 
 export const CostosVuelo = styled.div`
-  background-color: #f2f2f2;
+  background-color: #fff;
   padding: 10px;
   margin-bottom: 20px;
 `;

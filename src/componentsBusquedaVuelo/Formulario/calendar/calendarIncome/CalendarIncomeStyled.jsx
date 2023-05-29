@@ -8,33 +8,32 @@ export const Modal = styled.div`
   border-radius: 15px;
 `;
 
-export const DateClose = styled.div`
+export const SpanIncome = styled.span`
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  button {
-    width: 30px;
-    height: 30px;
-    border: none;
-  }
-  img {
-    width: 30px;
-  }
-`;
-export const Week = styled.div`
-  padding: 20px;
-  border-radius: 15px;
-  display: flex;
+  color: #000000;
 `;
 
-export const WeekDays = styled.div`
-  border-radius: 15px;
-`;
-
-export const Days = styled.div`
+export const Income = styled.p`
   display: flex;
+  font-size: 1.3rem;
+  margin-bottom: 2px;
+  color: #000000;
 `;
-export const Day = styled.div`
 
+export const Calendar = styled.img`
+  width: 35px;
+  height: 35px;
+`;
+
+export const DivIcome = styled.div`
+  margin: 5px;
+  display: flex;
+  align-items: center;
+`;
+
+export const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
 `;
