@@ -5,78 +5,117 @@ import {
   HorarioItem,
   MaletasList,
   MaletaItem,
+  MaletaImage,
+  MaletaPrice,
 } from './VuelosConMaletaStyled';
 import { Link } from 'react-router-dom';
 
-
 const VuelosConMaletas = () => {
-  const [idaSeleccionado, setIdaSeleccionado] = useState(null);
-  const [regresoSeleccionado, setRegresoSeleccionado] = useState(null);
-  const [maletaSeleccionada, setMaletaSeleccionada] = useState(null);
+  const [idaMaletaSeleccionada, setIdaMaletaSeleccionada] = useState(null);
+  const [regresoMaletaSeleccionada, setRegresoMaletaSeleccionada] = useState(null);
 
-  const handleIdaSeleccionado = (horario) => {
-    setIdaSeleccionado(horario);
+  const handleMaletaSeleccionada = (maleta, vuelo) => {
+    if (vuelo === 'ida') {
+      setIdaMaletaSeleccionada(maleta);
+    } else if (vuelo === 'regreso') {
+      setRegresoMaletaSeleccionada(maleta);
+    }
   };
 
-  const handleRegresoSeleccionado = (horario) => {
-    setRegresoSeleccionado(horario);
-  };
-
-  const handleMaletaSeleccionada = (maleta) => {
-    setMaletaSeleccionada(maleta);
-  };
-
-  // Valores temporales mientras se generan los datos reales
   const horariosIda = [
-    { horario: '10:00 AM', ciudad: 'Ciudad A' },
-    { horario: '2:00 PM', ciudad: 'Ciudad B' },
+    { horario: '10:00 AM', llegada: '12:00 PM' },
+    { horario: '2:00 PM', llegada: '4:00 PM' },
   ];
   const horariosRegreso = [
-    { horario: '8:00 AM', ciudad: 'Ciudad A' },
-    { horario: '6:00 PM', ciudad: 'Ciudad B' },
+    { horario: '8:00 AM', llegada: '10:00 AM' },
+    { horario: '6:00 PM', llegada: '8:00 PM' },
   ];
-  const opcionesMaletas = ['Pequeña', 'Mediana', 'Grande'];
+  const opcionesMaletas = [
+    {
+      nombre: '1 objeto personal',
+      imagen: '/src/images/maleta.png',
+      precio: 0,
+    },
+    {
+      nombre: 'Equipaje de mano',
+      imagen: '/src/images/maleta.png',
+      precio: 10,
+    },
+    {
+      nombre: 'Equipaje 25kg',
+      imagen: '/src/images/maleta.png',
+      precio: 20,
+    },
+  ];
 
   return (
     <VuelosConMaletasContainer>
       <Link to="/">Volver a la página principal</Link>
-      <h2>Vuelo de Ida</h2>
-      <HorariosList>
-        {horariosIda.map((horario) => (
-          <HorarioItem
-            key={horario.horario}
-            onClick={() => handleIdaSeleccionado(horario.horario)}
-          >
-            {horario.horario} - {horario.ciudad}
-          </HorarioItem>
-        ))}
-      </HorariosList>
 
-      <h2>Vuelo de Regreso</h2>
-      <HorariosList>
-        {horariosRegreso.map((horario) => (
-          <HorarioItem
-            key={horario.horario}
-            onClick={() => handleRegresoSeleccionado(horario.horario)}
-          >
-            {horario.horario} - {horario.ciudad}
-          </HorarioItem>
-        ))}
-      </HorariosList>
+      <div>
+        <h2>Vuelo de Ida</h2>
+        <p>Ciudad A a Ciudad B</p>
+        <div>
+          <p>Selección de horarios y equipajes</p>
+          <div style={{ display: 'flex', marginBottom: '20px' }}>
+            <HorariosList>
+              {horariosIda.map((horario) => (
+                <HorarioItem key={horario.horario}>
+                  {horario.horario} - {horario.llegada}
+                  <MaletasList>
+                    {opcionesMaletas.map((maleta) => (
+                      <MaletaItem
+                        key={maleta.nombre}
+                        isSelected={idaMaletaSeleccionada === maleta}
+                        onClick={() => handleMaletaSeleccionada(maleta, 'ida')}
+                      >
+                        <MaletaImage src={maleta.imagen} alt={maleta.nombre} />
+                        {maleta.nombre}
+                        <MaletaPrice>${maleta.precio}</MaletaPrice>
+                      </MaletaItem>
+                    ))}
+                  </MaletasList>
+                </HorarioItem>
+              ))}
+            </HorariosList>
+          </div>
+        </div>
+      </div>
 
-      <h2>Selección de Maletas</h2>
-      <MaletasList>
-        {opcionesMaletas.map((maleta) => (
-          <MaletaItem
-            key={maleta}
-            onClick={() => handleMaletaSeleccionada(maleta)}
-          >
-            {maleta}
-          </MaletaItem>
-        ))}
-      </MaletasList>
+      <div>
+        <h2>Vuelo de Regreso</h2>
+        <p>Ciudad B a Ciudad A</p>
+        <div>
+          <p>Selección de horarios y equipajes</p>
+          <div style={{ display: 'flex', marginBottom: '20px' }}>
+            <HorariosList>
+              {horariosRegreso.map((horario) => (
+                <HorarioItem key={horario.horario}>
+                  {horario.horario} - {horario.llegada}
+                  <MaletasList>
+                    {opcionesMaletas.map((maleta) => (
+                      <MaletaItem
+                        key={maleta.nombre}
+                        isSelected={regresoMaletaSeleccionada === maleta}
+                        onClick={() => handleMaletaSeleccionada(maleta, 'regreso')}
+                      >
+                        <MaletaImage src={maleta.imagen} alt={maleta.nombre} />
+                        {maleta.nombre}
+                        <MaletaPrice>${maleta.precio}</MaletaPrice>
+                      </MaletaItem>
+                    ))}
+                  </MaletasList>
+                </HorarioItem>
+              ))}
+            </HorariosList>
+          </div>
+        </div>
+      </div>
+
+      <Link to="/checkout">Continuar al pago</Link>
     </VuelosConMaletasContainer>
   );
 };
 
 export default VuelosConMaletas;
+
