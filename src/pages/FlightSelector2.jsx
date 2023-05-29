@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import FlightSelectors from '../componentsFlightSelector/FlightSelectors';
 
-export default function FlightSelector() {
+export default function FlightSelector2() {
   return (
-    <div>FlightSelector2</div>
-  )
+    <FlightSelectors />
+  );
 }
