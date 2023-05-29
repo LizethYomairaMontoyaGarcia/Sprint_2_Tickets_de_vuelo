@@ -4,7 +4,6 @@ import {
   ContainerTwo,
   ButtonFlight,
   FormularioFlight,
-  Calendar,
   SpanSpan,
 } from "./StyleFormularioFlight";
 import Passenger from "./passeger/Passenger";
@@ -14,7 +13,6 @@ import CalendarExit from "./calendar/calendarExit/CalendarExit";
 import CalendarIncome from "./calendar/calendarIncome/CalendarIncome";
 import Origin from "./origin/OriginCity";
 import Destination from "./destination/Destination";
-import CalendarIcono from "../../images/dateCalendar.png";
 import { searchParamsContext } from "../../routes/AppRoutes";
 import Swal from "sweetalert2";
 
@@ -99,7 +97,6 @@ export function Formulario({ viaje }) {
 
         <ContainerTwo>
           <div>
-            <Calendar src={CalendarIcono} alt="calendario" />
             <CalendarExit isOpen={modalIsOpen} onRequestClose={closeModal} />
           </div>
         </ContainerTwo>
@@ -108,7 +105,6 @@ export function Formulario({ viaje }) {
         {viaje === "redondo" && (
           <ContainerTwo>
             <div>
-              <Calendar src={CalendarIcono} alt="calendario" />
               <CalendarIncome />
             </div>
           </ContainerTwo>
