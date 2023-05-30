@@ -19,17 +19,17 @@ const VuelosConMaletas = () => {
     {
       nombre: '1 objeto personal',
       imagen: maletaImage,
-      precio: 548,
+      precio: 30000,
     },
     {
       nombre: 'Equipaje de mano',
       imagen: maletaImage,
-      precio: 1084,
+      precio: 60000,
     },
     {
       nombre: 'Equipaje 25kg',
       imagen: maletaImage,
-      precio: 1945,
+      precio: 100000,
     },
   ];
 
@@ -60,13 +60,17 @@ const VuelosConMaletas = () => {
       updatedMaletas[horarioId] = maleta;
   
       sessionStorage.setItem('selectedMaletas', JSON.stringify(updatedMaletas));
-  
+      window.location.reload();
+
       return updatedMaletas;
+
     });
   };
   
+//------------------------------------------
+//----------------------------------------------
   
-  const ciudadOrigen = sessionStorage.getItem("selectedCityOrigin");
+const ciudadOrigen = sessionStorage.getItem("selectedCityOrigin");
 const ciudadDestino = sessionStorage.getItem("selectedCityDestination");
 
 //----------------------------------
@@ -160,6 +164,7 @@ console.log(horariosIda);
 console.log(horariosRegreso);
 
 //----------------------------------
+
 
 //----------------------------------
 //----------------------------------

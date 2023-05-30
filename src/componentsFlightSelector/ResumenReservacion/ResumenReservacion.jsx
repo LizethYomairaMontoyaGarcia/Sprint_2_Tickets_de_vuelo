@@ -145,12 +145,65 @@ const detallesReservacion = {
   RHoraL: horaLlegadareturn,
    //Agrega más detalles de la reservación aquí
 };
+
+//--------------------------
+
 const costosVuelo = {
   costoVuelo: costoVuelo,
-  costoMaletas: '$50',
-  iva: '$75',
-  total: '$625',
+  costoMaletas: 0,
+  iva: 0,
+  total: 0 * pasajeros,
 };
+
+// Obtener los datos de las maletas del session storage
+const selectedMaletas = JSON.parse(sessionStorage.getItem("selectedMaletas"));
+
+// Verificar si los datos de las maletas existen en el session storage
+if (selectedMaletas) {
+  // Recorrer los IDs de las maletas seleccionadas
+  Object.keys(selectedMaletas).forEach((maletaId) => {
+    const maleta = selectedMaletas[maletaId];
+    if (maleta && maleta.precio) {
+      // Sumar el precio de la maleta al costo total de las maletas
+      costosVuelo.costoMaletas += parseFloat(maleta.precio);
+    }
+  });
+} else {
+  // Los datos de las maletas no están definidos en el session storage
+  console.log("Los datos de las maletas no están definidos");
+}
+
+// Calcular el IVA (asumiendo una tasa de impuesto del 10%)
+const tasaIVA = 0.1;
+costosVuelo.iva = costosVuelo.costoVuelo * tasaIVA;
+
+// Calcular el total sumando los costos de vuelo y el IVA
+costosVuelo.total =
+  parseFloat(costoVuelo) +
+  parseFloat(costosVuelo.costoMaletas) +
+  parseFloat(costosVuelo.iva);
+
+
+// Actualizar los valores en la constante costosVuelo
+costosVuelo.costoMaletas = `$${costosVuelo.costoMaletas}`;
+costosVuelo.iva = `$${costosVuelo.iva.toFixed(2)}`; // Redondear el IVA a 2 decimales
+costosVuelo.total = `$${costosVuelo.total}`;
+
+// Mostrar los costos actualizados
+console.log("Costo de las maletas:", costosVuelo.costoMaletas);
+console.log("IVA:", costosVuelo.iva);
+console.log("Total:", costosVuelo.total);
+
+
+//----------------------------------------------
+
+const costoMaletas = costosVuelo.costoMaletas;
+const iva = costosVuelo.iva;
+const total = costosVuelo.total;
+
+
+//----------------------------------------------
+
 
   return (
     <div>
@@ -196,10 +249,10 @@ const costosVuelo = {
       <h2>Costos de Vuelo</h2>
       <CostosVuelo>
         <CostoItem>
-          <p>Costo de Vuelo: {costosVuelo.costoVuelo}</p>
-          <p>Costo de Maletas: {costosVuelo.costoMaletas}</p>
-          <p>IVA: {costosVuelo.iva}</p>
-          <p>Total: {costosVuelo.total}</p>
+          <p>Costo de Tiquete Und: {costosVuelo.costoVuelo}</p>
+          <p>Costo de Maletas: {costoMaletas}</p>
+          <p>IVA: {iva}</p>
+          <p>Total Und: {total}</p>
         </CostoItem>
       </CostosVuelo>
     </div>
