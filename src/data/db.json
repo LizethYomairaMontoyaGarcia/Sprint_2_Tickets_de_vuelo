@@ -23,14 +23,16 @@
             "departure_time": "10:00:00",
             "arrival_date": "15/08/2023",
             "arrival_time": "15:00:00",
-            "duration": "05:00"
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "return": {
             "departure_date": "28/08/2023",
             "departure_time": "08:00:00",
             "arrival_date": "28/08/2023",
-            "arrival_time": "13:00:00",
-            "duration": "05:00"
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "price": "400.000"
         },
@@ -46,14 +48,16 @@
             "departure_time": "10:00:00",
             "arrival_date": "15/08/2023",
             "arrival_time": "15:00:00",
-            "duration": "05:00"
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "return": {
             "departure_date": "28/08/2023",
             "departure_time": "08:00:00",
             "arrival_date": "28/08/2023",
-            "arrival_time": "13:00:00",
-            "duration": "05:00"
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "price": "250.000"
         },
@@ -69,14 +73,16 @@
             "departure_time": "10:00:00",
             "arrival_date": "15/08/2023",
             "arrival_time": "15:00:00",
-            "duration": "05:00"
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "return": {
             "departure_date": "28/08/2023",
             "departure_time": "08:00:00",
             "arrival_date": "28/08/2023",
-            "arrival_time": "13:00:00",
-            "duration": "05:00"
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "price": "400.000"
         },
@@ -93,14 +99,16 @@
             "departure_time": "10:00:00",
             "arrival_date": "15/08/2023",
             "arrival_time": "15:00:00",
-            "duration": "05:00"
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "return": {
             "departure_date": "28/08/2023",
             "departure_time": "08:00:00",
             "arrival_date": "28/08/2023",
-            "arrival_time": "13:00:00",
-            "duration": "05:00"
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "price": "500.000"
         },
@@ -117,14 +125,16 @@
             "departure_time": "10:00:00",
             "arrival_date": "15/08/2023",
             "arrival_time": "15:00:00",
-            "duration": "05:00"
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "return": {
             "departure_date": "28/08/2023",
             "departure_time": "08:00:00",
             "arrival_date": "28/08/2023",
-            "arrival_time": "13:00:00",
-            "duration": "05:00"
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
           },
           "price": "259.000"
         }

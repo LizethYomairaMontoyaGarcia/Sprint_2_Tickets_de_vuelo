@@ -4,7 +4,9 @@ export const DetallesReservacion = styled.div`
   background-color: #fff;
   padding: 10px;
   margin-bottom: 20px;
+  width: 300px;
 `;
+
 
 export const CostosVuelo = styled.div`
   background-color: #fff;

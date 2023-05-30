@@ -32,7 +32,7 @@ export default function CalendarExit() {
     setDateIncome(infoDateReturn);
     // Guardar la información en Session Storage
     sessionStorage.setItem(
-      "selectedCityOrigin",
+      "selectedDateOutcome",
       JSON.stringify(infoDateReturn)
     );
     setDateCalendarExit({ infoDateReturn });

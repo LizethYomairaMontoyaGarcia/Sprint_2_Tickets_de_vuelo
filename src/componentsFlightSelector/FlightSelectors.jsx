@@ -4,6 +4,8 @@ import ResumenReservacion from './ResumenReservacion/ResumenReservacion';
 import { FlightSelectorContainer } from './FlightSelectorsStyled';
 
 const FlightSelector = () => {
+
+  
   return (
     <FlightSelectorContainer>
       <VuelosConMaleta />

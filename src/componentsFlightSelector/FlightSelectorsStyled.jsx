@@ -14,6 +14,7 @@ export const ResumenReservacionColumn = styled.div`
   width: 400px;
   display: flex;
   justify-content: flex-end;
+
 `;
 
 export const ResumenReservacionContainer = styled.div`

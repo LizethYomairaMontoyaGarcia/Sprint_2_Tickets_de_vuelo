@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   Container,
   ContainerTwo,
@@ -17,6 +17,7 @@ import { searchParamsContext } from "../../routes/AppRoutes";
 import Swal from "sweetalert2";
 
 export function Formulario({ viaje }) {
+
   //-----------------------------------
   const navigate = useNavigate();
   //const handleButton = () => {
@@ -77,6 +78,10 @@ export function Formulario({ viaje }) {
       );
     }
   };
+
+  useEffect(() => {
+    sessionStorage.clear();
+  }, []);
 
   return (
     <>
