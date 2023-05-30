@@ -49,7 +49,8 @@ const Origin = () => {
 
   const handleCityClick = (city) => {
     setSelectedCityOrigin(city);
-    sessionStorage.setItem("selectedCityOrigin", city); // Guardar el valor en el Session Storage
+    // Guardar el valor en el Session Storage
+    sessionStorage.setItem("selectedCityOrigin", city); 
     closeModal();
   };
 
