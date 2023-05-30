@@ -28,7 +28,7 @@ export default function CalendarExit() {
     useContext(searchParamsContext);
   let infoDateReturn = {};
   const calendarOperation = (date) => {
-    infoDateReturn = { day: date.$D, month: date.$M, year: date.$y };
+    infoDateReturn = { day: date.$D, month: date.$M+1, year: date.$y };
     setDateIncome(infoDateReturn);
     // Guardar la información en Session Storage
     sessionStorage.setItem(
