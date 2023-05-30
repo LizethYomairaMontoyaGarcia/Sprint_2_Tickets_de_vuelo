@@ -259,7 +259,7 @@ console.log(horariosRegreso);
         </div>
     )}
 
-      <Link to="/checkout">Continuar al pago</Link>
+      <Link to="/seatSelector">Continuar seleccion de silla</Link>
     </VuelosConMaletasContainer>
   );
 };
