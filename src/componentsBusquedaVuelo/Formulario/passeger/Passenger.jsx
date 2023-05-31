@@ -15,6 +15,7 @@ import { searchParamsContext } from "../../../routes/AppRoutes";
 
 const Passenger = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  //almacenar la informacion de adulto, niños y bebes
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
   const [baby, setBaby] = useState(0);
@@ -39,7 +40,7 @@ useContext(searchParamsContext);
   const toggleModal = () => {
     setModalOpen(!modalOpen);
   };
-
+//incrementar 
   const increasePassengerCount = (type) => {
     if (type === "adults") {
       setAdults(adults + 1);
@@ -49,7 +50,7 @@ useContext(searchParamsContext);
       setBaby(baby + 1);
     }
   };
-
+//reducir
   const decreasePassengerCount = (type) => {
     if (type === "adults" && adults > 0) {
       setAdults(adults - 1);
@@ -137,7 +138,7 @@ useContext(searchParamsContext);
               </Div>
             </Container>
 
-            <ModalButton onClick={handleModalConfirm}>Confirmar</ModalButton>
+            <ModalButton onClick={handleModalConfirm}>Confirmar selección </ModalButton>
           </ModalContent>
         </Modal>
       )}

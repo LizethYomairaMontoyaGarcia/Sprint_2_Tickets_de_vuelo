@@ -31,10 +31,13 @@ const Origin = () => {
 
     fetchDataOrigin();
   }, []);
-
+//showModal para controlar la visibilidad del modal, s
   const [showModal, setShowModal] = useState(false);
+  //earchTerm para almacenar el término de búsqueda ingresado por el usuario,
   const [searchTerm, setSearchTerm] = useState("");
+  //almacenar la lista de cuidades
   const [cities, setCities] = useState([]);
+  
   //global
   const { setSelectedCityOrigin, selectedCityOrigin } =
     useContext(searchParamsContext);
