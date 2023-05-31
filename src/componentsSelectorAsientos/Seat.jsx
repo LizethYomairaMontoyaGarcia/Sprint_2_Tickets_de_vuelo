@@ -33,20 +33,21 @@ function Seat() {
           <ResumenReservacion />
         </div>
 
-        <div>
-          <Title>
-            <h2>Servicios opcionales</h2>
-          </Title>
-          <Info>
-            <p>Selecciona tu asiento de salida --------- $0</p>
-            <p>Selecciona tu asiento de Retorno ------ $0</p>
-          </Info>
+        <div className="aquies">
+          <div>
+            <Title>
+              <h2>Servicios opcionales</h2>
+            </Title>
+            <Info>
+              <p>Selecciona tu asiento de salida --------- $0</p>
+              <p>Selecciona tu asiento de Retorno ------ $0</p>
+            </Info>
+          </div>
+
+          <Total>
+            <h3>TOTAL ------------------$200.000</h3>
+          </Total>
         </div>
-
-        <Total>
-          <h3>TOTAL ------------------$200.000</h3>
-        </Total>
-
         <ButtonPaypal type="button" onClick={() => handleButton()}>
           <ImgPaypal src={Paypal} alt="paypal" /> Pagar con Paypal
         </ButtonPaypal>

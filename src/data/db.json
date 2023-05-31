@@ -765,6 +765,60 @@
       "status": {
         "selected": true
       }
+    },
+    {
+      "id": "F4",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "F5",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "E5",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "C2",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "E6",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "E8",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "D8",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "D7",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "D6",
+      "status": {
+        "selected": true
+      }
     }
   ],
   "seatsReturn": [

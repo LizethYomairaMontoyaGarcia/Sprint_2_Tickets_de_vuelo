@@ -2,11 +2,19 @@ import styled from "styled-components";
 
 export const DivPadre = styled.div`
   display: flex;
-  padding-left: 50px;
+  background-color: #ebebeb;
+    
+    .aquies{
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
 `;
 
 export const DivInfoFlight = styled.div`
   padding-left: 90px;
+
 `;
 export const InfoFlight = styled.div`
   padding: 20px;
@@ -40,7 +48,6 @@ export const InfoPrice = styled.div`
 
 export const Info = styled.div`
   padding: 20px;
-  background-color: #ebebeb;
   margin-top: 8px;
   margin-bottom: 15px;
   p {
@@ -57,7 +64,6 @@ export const Promotion = styled.p`
 
 export const Total = styled.div`
   padding: 20px;
-  background-color: #ebebeb;
   margin-top: 8px;
   margin-bottom: 15px;
 `;
