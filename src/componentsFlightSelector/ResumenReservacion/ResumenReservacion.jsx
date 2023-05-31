@@ -4,6 +4,7 @@ import {
   CostosVuelo,
   CostoItem,
 } from './ResumenReservacionStyled';
+import { Link } from 'react-router-dom';
 
 
 const ResumenReservacion = () => {
@@ -208,19 +209,24 @@ const total = costosVuelo.total;
   return (
     <div>
         <h2>Tu reservación</h2>
-      <DetallesReservacion>
+      <DetallesReservacion className='DetallesReservacion'>
         <div>
           <p>Pasajeros: {detallesReservacion.Pasajeros}</p>
         </div>
         <div className='vuelosalida'>
           <p>Vuelo de salida</p>
           <div className='codigos'>
-             <h2>{detallesReservacion.Ocode}</h2>
-             <p>{detallesReservacion.OHoraS}</p>
-             <div>____</div>
-             <h2>{detallesReservacion.Rcode}</h2>
-             <p>{detallesReservacion.OHoraL}</p>
+            <div className='unidad'>
+              <h2>{detallesReservacion.Ocode}</h2>
+              <p>{detallesReservacion.OHoraS}</p>
+            </div>
+            <div className='linea'></div>
+            <div className='unidad'>
+              <h2>{detallesReservacion.Rcode}</h2>
+              <p>{detallesReservacion.OHoraL}</p>
+            </div>
           </div>
+
           <p>{fechasalida}</p>
         </div>
 
@@ -228,14 +234,15 @@ const total = costosVuelo.total;
         <div className='vueloregreso'>
           <p>Vuelo de regreso</p>
           <div className='codigos'>
-            <div className='vertical'>
+            <div className='unidad'>
               <h2>{detallesReservacion.Rcode}</h2>
               <p>{detallesReservacion.RHoraS}</p>
             </div>
              
-             <div>____</div>
+            <div className='linea'></div>
 
-             <div className='vertical'>
+
+             <div className='unidad'>
               <h2>{detallesReservacion.Ocode}</h2>
               <p>{detallesReservacion.RHoraL}</p>
              </div>
@@ -247,15 +254,39 @@ const total = costosVuelo.total;
       </DetallesReservacion>
       
       <h2>Costos de Vuelo</h2>
-      <CostosVuelo>
-        <CostoItem>
+      <CostosVuelo className='CostosVuelo'>
+        <CostoItem className='CostoItem'>
           <p>Costo de Tiquete Und: {costosVuelo.costoVuelo}</p>
           <p>Costo de Maletas: {costoMaletas}</p>
           <p>IVA: {iva}</p>
           <p>Total Und: {total}</p>
         </CostoItem>
+        
       </CostosVuelo>
+
+      <Link to="/seatSelector"
+            style={{
+          borderRadius: '20px',
+          border: '1px solid #9e1071',
+          textDecoration: 'none', // Establecer textDecoration en none
+          backgroundColor: 'transparent',
+          padding: '18px 18px',
+          marginTop: '2rem',
+          marginLeft: 'auto',
+          fontSize: '16px',
+          fontWeight: 'bold',
+          width: '310px',
+          color: '#9e1071',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          }}
+          className="custom-link"
+      >
+  Continuar seleccion de silla</Link>
+      
     </div>
+    
   );
 };
 

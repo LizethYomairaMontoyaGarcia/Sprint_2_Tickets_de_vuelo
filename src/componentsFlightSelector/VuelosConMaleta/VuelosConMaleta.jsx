@@ -164,19 +164,13 @@ console.log(horariosIda);
 console.log(horariosRegreso);
 
 //----------------------------------
-
-
 //----------------------------------
 //----------------------------------
 //----------------------------------
-//----------------------------------
-//----------------------------------
-//----------------------------------
-
 
   return (
     <VuelosConMaletasContainer>
-      <Link to="/">Volver a la página principal</Link>
+      
 
       <div className='vueloidacheck'>
         <h2>Vuelo de Ida</h2>
@@ -185,16 +179,20 @@ console.log(horariosRegreso);
           <p>Selección de horarios y equipajes</p>
           <div style={{ display: 'flex', marginBottom: '20px' }}>
             <HorariosList>
+            
               {horariosIda.map((horario) => (
                 <HorarioItem key={horario.id} duracionVuelo={duracionVueloexit}>
+                <div className='vuelo1'>
                   <div>{horario.horario}</div>
                   <div className='centro'>
-                  <div>{duracionVueloexit}</div>
-                    <div>____</div>
+
+                    <div>{duracionVueloexit}</div>
+                    <div className='linea'></div>
                     <div>Sin escala</div>
+
                   </div>
                   <div>{horario.llegada}</div>
-                   
+                </div>
                   <MaletasList>
                     {opcionesMaletas.map((maleta) => (
                       <MaletaItem
@@ -213,6 +211,25 @@ console.log(horariosRegreso);
                   </MaletasList>
                 </HorarioItem>
               ))}
+              <Link to="/"style={{
+          borderRadius: '20px',
+          border: '1px solid #9e1071',
+          textDecoration: 'none', // Establecer textDecoration en none
+
+          backgroundColor: 'transparent',
+          padding: '18px 18px',
+          marginTop: '2rem',
+          marginLeft: 'auto',
+          fontSize: '16px',
+          fontWeight: 'bold',
+          width: '310px',
+          color: '#9e1071',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          }}
+          className="custom-link"
+      >Cambiar vuelo</Link>
             </HorariosList>
           </div>
         </div>
@@ -228,13 +245,17 @@ console.log(horariosRegreso);
             <HorariosList>
               {horariosRegreso.map((horario) => (
                  <HorarioItem key={horario.id} duracionVuelo={duracionVueloreturn}>
+                  <div className='vuelo2'>
                   <div>{horario.horario}</div>
+
                   <div className='centro'>
-                     <div>{duracionVueloreturn}</div>
-                    <div>____</div>
+                    <div>{duracionVueloreturn}</div>
+                    <div className='linea'></div>
                     <div>Sin escala</div>
                   </div>
+
                   <div>{horario.llegada}</div>
+                  </div>
                   <MaletasList>
                     {opcionesMaletas.map((maleta) => (
                       <MaletaItem
@@ -253,13 +274,31 @@ console.log(horariosRegreso);
                   </MaletasList>
                 </HorarioItem>
               ))}
+              <Link to="/"style={{
+          borderRadius: '20px',
+          border: '1px solid #9e1071',
+          textDecoration: 'none', // Establecer textDecoration en none
+          backgroundColor: 'transparent',
+          padding: '18px 18px',
+          marginTop: '2rem',
+          marginLeft: 'auto',
+          fontSize: '16px',
+          fontWeight: 'bold',
+          width: '310px',
+          color: '#9e1071',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          }}
+          className="custom-link"
+      >Cambiar vuelo</Link>
             </HorariosList>
           </div>
         </div>
         </div>
     )}
 
-      <Link to="/seatSelector">Continuar seleccion de silla</Link>
+      
     </VuelosConMaletasContainer>
   );
 };
