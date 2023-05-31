@@ -1,179 +1,169 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+import axios from "axios";
 import {
-  AisleArrival,
-  BackSeats,
-  ExitPostButton,
-  Column2Arrival,
-  ColumnExit,
-  ReferencePost,
-  RowSeats,
+  DivStyledExit,
+  StyledExit,
+  ContainerExit,
+  ButtonExit,
+  Seats,
   SubtitleReturn,
+  RowSeats,
+  PositioNumbering,
+  PositioNumberingSpace,
+  ReferencePost,
+  ColumnExit,
+  ExitStandard,
 } from "./ExitFlightStyled";
+import { useNavigate } from "react-router-dom";
+import { searchParamsContext } from "../../routes/AppRoutes";
 
 const ExitFlight = () => {
+  const navigate = useNavigate();
+
+  const handleButtonExit = () => {
+    console.log("entre");
+    navigate("/");
+  };
+
+  const { setSelectedPassengers } = useContext(searchParamsContext);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/seatsSalida");
+        const seatsData = response.data.map((seat) => ({
+          id: seat.id,
+          status: seat.status,
+          selected: seat.status.selected,
+        }));
+        setSeats(seatsData);
+      } catch (error) {
+        console.error("Error al obtener los asientos:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const [seats, setSeats] = useState([]);
+  //este se ejecuta para cuanso se selecione un asiento
+  const handleSeatSelection = async (codeSeat) => {
+    const increasePassengerCount = (type) => {
+      setSelectedPassengers((prevPassengers) => ({
+        ...prevPassengers,
+        [type]: prevPassengers[type] + 1,
+      }));
+    };
+
+    //para cuando se selecione la silla en el db.json se guarde asi: selected: true
+    if (!seats.some((seat) => seat.id === codeSeat)) {
+      const newSeat = { id: codeSeat, status: { selected: true } };
+
+      try {
+        const response = await axios.post(
+          "http://localhost:3000/seatsSalida",
+          newSeat
+        );
+        const createdSeat = response.data;
+        setSeats([...seats, createdSeat]);
+        //guardar en el sesion storage
+        increasePassengerCount();
+        sessionStorage.setItem(
+          "selectedSeatsExit",
+          JSON.stringify([...seats, createdSeat])
+        );
+      } catch (error) {
+        console.error("Error al guardar el asiento se salida:", error);
+      }
+    }
+  };
+
+  const ExitSeats = () => {
+    //filas
+    const rows = 10;
+    //columnas
+    const columns = 6;
+    //generar la interfaz de los asientos
+    const renderSeats = () => {
+      const seatsArray = [];
+      for (let index = 0; index < rows; index++) {
+        const arrayRows = [];
+
+        for (let position = 0; position < columns; position++) {
+          const specialColumn = position === 2;
+          //convertir un numero a un caracter
+          const codeSeat = `${String.fromCharCode(65 + position)}${index + 1}`;
+          //puesto seleccionado
+          const selected = seats.some((seat) => seat.id === codeSeat);
+          arrayRows.push(
+            <button
+              onClick={() => handleSeatSelection(codeSeat)}
+              style={{
+                marginRight: specialColumn ? "50px" : "10px",
+                width: "50px",
+                height: "50px",
+                border: "none",
+                borderRadius: "5px",
+                marginBottom: "10px",
+                backgroundColor: selected ? "#4b6ecf" : "#cecece",
+                cursor: "pointer",
+              }}
+              key={position}
+            >
+              {codeSeat}
+            </button>
+          );
+        }
+        seatsArray.push(arrayRows);
+      }
+
+      return seatsArray;
+    };
+
+    return <div>{renderSeats()}</div>;
+  };
+
   return (
     <>
-      <div>
-        <div>
-          <h1>Vuelo de Salida</h1>
-          <button>Cambiar vuelo</button>
-        </div>
-        <h2>Martes 30 nov 2021</h2>
-        <h4>Cd. Mexico a Culiacan(ADZ)</h4>
-        <p>Selecciona tus Asientos</p>
-      </div>
+      <DivStyledExit>
+        <StyledExit>
+          <ContainerExit>
+            <h1>Vuelo de Salida</h1>
+            <ButtonExit type="button" onClick={() => handleButtonExit()}>
+              Cambiar vuelo
+            </ButtonExit>
+          </ContainerExit>
+          <h2>Martes 30 nov 2021</h2>
+          <h4>Cd. Mexico a Culiacan(ADZ)</h4>
+          <p>Selecciona tus Asientos</p>
+        </StyledExit>
+        <ReferencePost>
+          <ColumnExit>
+            <RowSeats>
+              <PositioNumbering>A</PositioNumbering>
+              <PositioNumbering>B</PositioNumbering>
+              <PositioNumbering>C</PositioNumbering>
+            </RowSeats>
+          </ColumnExit>
+          <ColumnExit>
+            <PositioNumberingSpace></PositioNumberingSpace>
+          </ColumnExit>
+          <ColumnExit>
+            <RowSeats>
+              <PositioNumbering>D</PositioNumbering>
+              <PositioNumbering>E</PositioNumbering>
+              <PositioNumbering>F</PositioNumbering>
+            </RowSeats>
+          </ColumnExit>
+        </ReferencePost>
 
-      <ReferencePost>
-        <ColumnExit>
-          <RowSeats>
-            <AisleArrival>A</AisleArrival>
-            <AisleArrival>B</AisleArrival>
-            <AisleArrival>C</AisleArrival>
-          </RowSeats>
-        </ColumnExit>
-        <ColumnExit>
-          <AisleArrival></AisleArrival>
-        </ColumnExit>
-        <ColumnExit>
-          <RowSeats>
-            <AisleArrival>D</AisleArrival>
-            <AisleArrival>E</AisleArrival>
-            <AisleArrival>F</AisleArrival>
-          </RowSeats>
-        </ColumnExit>
-      </ReferencePost>
-      <SubtitleReturn>
-        <h5>Salida Rapida</h5>
-      </SubtitleReturn>
-      <BackSeats>
-        <ColumnExit>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-        </ColumnExit>
-        <Column2Arrival>
-          <ExitPostButton>1</ExitPostButton>
-          <ExitPostButton>3</ExitPostButton>
-          <ExitPostButton>4</ExitPostButton>
-          <ExitPostButton>2</ExitPostButton>
-          <ExitPostButton>5</ExitPostButton>
-        </Column2Arrival>
-        <ColumnExit>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-        </ColumnExit>
-      </BackSeats>
-      <SubtitleReturn>
-        <h5>Estándar</h5>
-      </SubtitleReturn>
-      <BackSeats>
-        <ColumnExit>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-        </ColumnExit>
-        <Column2Arrival>
-          <AisleArrival>6</AisleArrival>
-          <AisleArrival>7</AisleArrival>
-          <AisleArrival>8</AisleArrival>
-          <AisleArrival>9</AisleArrival>
-          <AisleArrival>10</AisleArrival>
-        </Column2Arrival>
-        <ColumnExit>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-          <RowSeats>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-            <ExitPostButton></ExitPostButton>
-          </RowSeats>
-        </ColumnExit>
-      </BackSeats>
+        <SubtitleReturn>
+          <ExitStandard>Salida Rapida</ExitStandard>
+        </SubtitleReturn>
+        <Seats>
+          <ExitSeats />
+        </Seats>
+      </DivStyledExit>
     </>
   );
 };

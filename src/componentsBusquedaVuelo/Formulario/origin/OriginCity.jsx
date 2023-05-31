@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 import {
   H2l,
   ModalOriginCity,
   Modal,
-  ModalContent ,
+  ModalContent,
   CloseIcon,
   ModalTitleCity,
   SearchContainer,
@@ -13,25 +13,34 @@ import {
   SearchIcon,
   ListCity,
   ItemCity,
-} from "./OriginCitystyled"
+} from "./OriginCitystyled";
+import axios from "axios";
+import { searchParamsContext } from "../../../routes/AppRoutes";
 
 const Origin = () => {
+  useEffect(() => {
+    const fetchDataOrigin = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/flights");
+        setCities(response.data.map((item) => item.departure_airport.city));
+        console.log("Respuesta del servidor:", response.data);
+      } catch (error) {
+        console.error("Error en la petición:", error);
+      }
+    };
+
+    fetchDataOrigin();
+  }, []);
+//showModal para controlar la visibilidad del modal, s
   const [showModal, setShowModal] = useState(false);
-  const [selectedCity, setSelectedCity] = useState("");
+  //earchTerm para almacenar el término de búsqueda ingresado por el usuario,
   const [searchTerm, setSearchTerm] = useState("");
-  const cities = [
-    "Medellin",
-    "Cali",
-    "Cartagena",
-    "Pereira",
-    "San Luis",
-    "Chile",
-    "Santa Marta",
-    "Estados Unidos",
-    "Valledupar",
-    "Armenia",
-    "Guajira",
-  ];
+  //almacenar la lista de cuidades
+  const [cities, setCities] = useState([]);
+  
+  //global
+  const { setSelectedCityOrigin, selectedCityOrigin } =
+    useContext(searchParamsContext);
 
   const openModal = () => {
     setShowModal(true);
@@ -42,7 +51,9 @@ const Origin = () => {
   };
 
   const handleCityClick = (city) => {
-    setSelectedCity(city);
+    setSelectedCityOrigin(city);
+    // Guardar el valor en el Session Storage
+    sessionStorage.setItem("selectedCityOrigin", city); 
     closeModal();
   };
 
@@ -53,8 +64,8 @@ const Origin = () => {
   return (
     <>
       <div onClick={openModal}>
-        {selectedCity ? (
-          <H2l>Ciudad de {selectedCity}</H2l>
+        {selectedCityOrigin ? (
+          <H2l>Ciudad de {selectedCityOrigin}</H2l>
         ) : (
           <H2l>Selecciona una ciudad</H2l>
         )}
@@ -63,12 +74,12 @@ const Origin = () => {
       {showModal && (
         <ModalOriginCity>
           <Modal>
-            <ModalContent >
+            <ModalContent>
               <ModalTitleCity>Punto de partida</ModalTitleCity>
               <CloseIcon onClick={closeModal}>
                 <AiOutlineClose size={24} />
               </CloseIcon>
-            </ModalContent >
+            </ModalContent>
 
             <SearchContainer>
               <SearchIcon>

@@ -35,29 +35,34 @@ export const ModalContent = styled.div`
 `;
 
 export const Container = styled.div`
-  display: grid;
-   grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  div{
-    justify-self: end;
-    grid-row-gap: 1em;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    width: 100%;
-  }
+`;
+
+export const Div = styled.div`
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+`;
+
+export const DivPersonAge = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const Title = styled.h3`
   margin-bottom: 5px;
+  padding: 10px;
 `;
 
 export const PassengerButton = styled.button`
   padding: 5px;
   margin: 2px;
-  border:none;
+  border: none;
   color: var(--purple);
   font-size: 30px;
   background: transparent;

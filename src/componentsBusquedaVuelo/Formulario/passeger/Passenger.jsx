@@ -1,56 +1,71 @@
-import React, { useState } from 'react';
-
-import {ContainerPassenger, Button, Modal, ModalContent, Container, Title, PassengerButton, ModalButton } from  './PassengerStyled';
-
+import React, { useState, useEffect, useContext } from "react";
+import {
+  ContainerPassenger,
+  Button,
+  Modal,
+  ModalContent,
+  Container,
+  Title,
+  PassengerButton,
+  ModalButton,
+  DivPersonAge,
+  Div,
+} from "./PassengerStyled";
+import { searchParamsContext } from "../../../routes/AppRoutes";
 
 const Passenger = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  //almacenar la informacion de adulto, niños y bebes
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
-  const [babies, setBabies] = useState(0);
-  const [selectedPassengers, setSelectedPassengers] = useState({
-    adults: 0,
-    children: 0,
-    babies: 0,
-  });
+  const [baby, setBaby] = useState(0);
+  //const [selectedPassengers, setSelectedPassengers] = useState({
+  //adults: 0,
+  // children: 0,
+  // baby: 0,
+  //});
+//global
+const { selectedPassengers, setSelectedPassengers } =
+useContext(searchParamsContext);
 
-  //'toggleModal': Esta función se encarga de cambiar el estado de 'modalOpen' entre 'true' y 'false'.
-  // Es utilizada para abrir y cerrar la ventana modal al hacer clic en el botón "Pasajeros".
+  // Leer los valores almacenados en el sessionStorage al cargar el componente
+ 
+
+  // Guardar los valores seleccionados en el sessionStorage
+  useEffect(() => {
+    const passengersToStore = JSON.stringify(selectedPassengers);
+    sessionStorage.setItem("passengers", passengersToStore);
+  }, [selectedPassengers]);
+
   const toggleModal = () => {
     setModalOpen(!modalOpen);
   };
-
-  //'increasePassengerCount': Esta función se encarga de aumentar la cantidad de pasajeros de un tipo específico (adultos, niños o bebés).
-  // Recibe como parámetro el tipo de pasajero y actualiza el estado correspondiente utilizando 'setAdults', 'setChildren' o 'setBabies'.
+//incrementar 
   const increasePassengerCount = (type) => {
-    if (type === 'adults') {
+    if (type === "adults") {
       setAdults(adults + 1);
-    } else if (type === 'children') {
+    } else if (type === "children") {
       setChildren(children + 1);
-    } else if (type === 'babies') {
-      setBabies(babies + 1);
+    } else if (type === "baby") {
+      setBaby(baby + 1);
     }
   };
-
-  //'decreasePassengerCount': Esta función se encarga de disminuir la cantidad de pasajeros de un tipo específico (adultos, niños o bebés). 
-  //Recibe como parámetro el tipo de pasajero y verifica si la cantidad actual es mayor a 0 antes de disminuirlo utilizando 'setAdults', 'setChildren' o 'setBabies'.
+//reducir
   const decreasePassengerCount = (type) => {
-    if (type === 'adults' && adults > 0) {
+    if (type === "adults" && adults > 0) {
       setAdults(adults - 1);
-    } else if (type === 'children' && children > 0) {
+    } else if (type === "children" && children > 0) {
       setChildren(children - 1);
-    } else if (type === 'babies' && babies > 0) {
-      setBabies(babies - 1);
+    } else if (type === "baby" && baby > 0) {
+      setBaby(baby - 1);
     }
   };
 
-  //'handleModalConfirm': Esta función se ejecuta al hacer clic en el botón "Confirmar" dentro de la ventana modal. 
-  //Actualiza el estado 'selectedPassengers' con la cantidad seleccionada de adultos, niños y bebés. Luego, llama a 'toggleModal' para cerrar la ventana modal.
   const handleModalConfirm = () => {
     setSelectedPassengers({
       adults,
       children,
-      babies,
+      baby,
     });
     toggleModal();
   };
@@ -60,41 +75,70 @@ const Passenger = () => {
       <Button onClick={toggleModal}>Pasajeros</Button>
 
       <div>
-        {selectedPassengers.adults} Adultos, {selectedPassengers.children} Niños, {selectedPassengers.babies} Bebés
+        {selectedPassengers.adults} Adultos, {selectedPassengers.children}{" "}
+        Niños, {selectedPassengers.baby} Bebés
       </div>
 
       {modalOpen && (
         <Modal>
           <ModalContent>
             <Container>
-              <Title>Adultos</Title>
-              <div>
-                <PassengerButton onClick={() => decreasePassengerCount('adults')}>-</PassengerButton>
+              <DivPersonAge>
+                <Title>Adultos</Title>
+                <p>(13 + años)</p>
+              </DivPersonAge>
+              <Div>
+                <PassengerButton
+                  onClick={() => decreasePassengerCount("adults")}
+                >
+                  -
+                </PassengerButton>
                 <span>{adults}</span>
-                <PassengerButton onClick={() => increasePassengerCount('adults')}>+</PassengerButton>
-                </div>
+                <PassengerButton
+                  onClick={() => increasePassengerCount("adults")}
+                >
+                  +
+                </PassengerButton>
+              </Div>
             </Container>
 
             <Container>
-              <Title>Niños</Title>
-              <div>
-                <PassengerButton onClick={() => decreasePassengerCount('children')}>-</PassengerButton>
+              <DivPersonAge>
+                <Title>Niños</Title>
+                <p>(2 - 12 años)</p>
+              </DivPersonAge>
+              <Div>
+                <PassengerButton
+                  onClick={() => decreasePassengerCount("children")}
+                >
+                  -
+                </PassengerButton>
                 <span>{children}</span>
-                <PassengerButton onClick={() => increasePassengerCount('children')}>+</PassengerButton>
-              </div>
+                <PassengerButton
+                  onClick={() => increasePassengerCount("children")}
+                >
+                  +
+                </PassengerButton>
+              </Div>
             </Container>
 
             <Container>
-              <Title>Bebés</Title>
-              <div>
-                <PassengerButton onClick={() => decreasePassengerCount('babies')}>-</PassengerButton>
-                <span>{babies}</span>
-                <PassengerButton onClick={() => increasePassengerCount('babies')}>+</PassengerButton>
-              </div>
+              <DivPersonAge>
+                <Title>Bebés</Title>
+                <p>(0 - 1 años)</p>
+              </DivPersonAge>
+              <Div>
+                <PassengerButton onClick={() => decreasePassengerCount("baby")}>
+                  -
+                </PassengerButton>
+                <span>{baby}</span>
+                <PassengerButton onClick={() => increasePassengerCount("baby")}>
+                  +
+                </PassengerButton>
+              </Div>
             </Container>
-            
 
-            <ModalButton onClick={handleModalConfirm}>Confirmar</ModalButton>
+            <ModalButton onClick={handleModalConfirm}>Confirmar selección </ModalButton>
           </ModalContent>
         </Modal>
       )}

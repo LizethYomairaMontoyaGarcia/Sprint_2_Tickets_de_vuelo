@@ -13,8 +13,6 @@ import { ImgPay } from "./StylesMain";
 import { ContainerMain } from "./StylesMain";
 import { Title } from "./StylesMain";
 
-
-
 function Main() {
   return (
     <ContainerMain>

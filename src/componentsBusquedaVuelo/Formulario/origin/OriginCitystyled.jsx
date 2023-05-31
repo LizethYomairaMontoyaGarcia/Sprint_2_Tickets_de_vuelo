@@ -5,6 +5,10 @@ export const H2l = styled.h2`
   align-items: center;
   margin-block-end: 0.5em;
   margin-inline-start: 30px;
+  @media screen and (max-width: 765px) {
+    font-size: 1rem;
+    margin-inline-start: 0px;
+  }
 `;
 
 export const ModalOriginCity = styled.div`
@@ -24,6 +28,9 @@ export const Modal = styled.div`
   width: 400px;
   padding: 20px;
   border-radius: 15px;
+  @media screen and (max-width: 765px) {
+    width: 350px;
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -67,8 +74,8 @@ export const SearchIcon = styled.span`
 export const ListCity = styled.ul`
   display: flex;
   list-style: none;
-  flex-direction: column;
-`;                                                                               
+  flex-direction: column; 
+`;
 
 export const ItemCity = styled.li`
   margin-bottom: 5px;
