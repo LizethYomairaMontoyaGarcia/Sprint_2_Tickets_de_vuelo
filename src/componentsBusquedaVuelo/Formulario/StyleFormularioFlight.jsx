@@ -12,10 +12,20 @@ export const Container = styled.div`
   height: 70px;
   border-radius: 8px;
   text-align: center;
+  display: flex;
 
   h1 {
     width: 100%;
     font-size: 2.3rem;
+  }
+  @media screen and (max-width: 765px) {
+    height: 60px;
+    width: 150px;
+    text-align: center;
+    h1 {
+      width: 80%;
+      font-size: 1rem;
+    }
   }
 `;
 export const ContainerTwo = styled.div`
@@ -27,7 +37,6 @@ export const ContainerTwo = styled.div`
     margin-left: 40px;
   }
   p {
-    
     color: #000;
     margin-left: 40px;
   }
@@ -46,6 +55,9 @@ export const ButtonFlight = styled.button`
     width: 28px;
     height: 28px;
   }
+  @media screen and (max-width: 765px) {
+    
+  }
 `;
 
 export const Calendar = styled.img`
@@ -55,7 +67,7 @@ export const Calendar = styled.img`
 `;
 
 export const SpanSpan = styled.span`
-   display: flex;
+  display: flex;
   font-size: 30px;
   color: #000000;
   margin-inline-start: 200px;

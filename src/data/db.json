@@ -136,6 +136,554 @@
           "price": "259000"
         }
       ]
+    },
+    {
+      "id": 2,
+      "airline": "Avianca",
+      "flight_code": "AA123",
+      "departure_airport": {
+        "name": "Aeropueto Internacional El Caraño Aiport",
+        "code": "UIB",
+        "city": "Quibdo"
+      },
+      "destinations": [
+        {
+          "id": 1,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Edén",
+            "code": "AXM",
+            "city": "Armenia"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "400000"
+        },
+        {
+          "id": 2,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Dorado",
+            "code": "BOG",
+            "city": "Bogotá"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "250.000"
+        },
+        {
+          "id": 3,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Rafael Nuñez",
+            "code": "CTG",
+            "city": "Cartagena"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "400000"
+        },
+        {
+          "id": 4,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Gustavo Rojas Pinilla",
+            "code": "ACZ",
+            "city": "San Andres"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "500000"
+        },
+        {
+          "id": 5,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Matecaña",
+            "code": "PEI",
+            "city": "Pereira"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "259000"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "airline": "Avianca",
+      "flight_code": "AA123",
+      "departure_airport": {
+        "name": "Aeropueto Internacional Alfonso Bonilla",
+        "code": "CLO",
+        "city": "Cali"
+      },
+      "destinations": [
+        {
+          "id": 1,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Edén",
+            "code": "AXM",
+            "city": "Armenia"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "400000"
+        },
+        {
+          "id": 2,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Dorado",
+            "code": "BOG",
+            "city": "Bogotá"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "250.000"
+        },
+        {
+          "id": 3,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Rafael Nuñez",
+            "code": "CTG",
+            "city": "Cartagena"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "400000"
+        },
+        {
+          "id": 4,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Gustavo Rojas Pinilla",
+            "code": "ACZ",
+            "city": "San Andres"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "500000"
+        },
+        {
+          "id": 5,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Matecaña",
+            "code": "PEI",
+            "city": "Pereira"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "259000"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "airline": "Avianca",
+      "flight_code": "AA123",
+      "departure_airport": {
+        "name": "Aeropueto Internacional Alfredo Vasquez Cobo",
+        "code": "LET",
+        "city": "Leticia"
+      },
+      "destinations": [
+        {
+          "id": 1,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Edén",
+            "code": "AXM",
+            "city": "Armenia"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "400000"
+        },
+        {
+          "id": 2,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Dorado",
+            "code": "BOG",
+            "city": "Bogotá"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "250.000"
+        },
+        {
+          "id": 3,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Rafael Nuñez",
+            "code": "CTG",
+            "city": "Cartagena"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "400000"
+        },
+        {
+          "id": 4,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Gustavo Rojas Pinilla",
+            "code": "ACZ",
+            "city": "San Andres"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "500000"
+        },
+        {
+          "id": 5,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Matecaña",
+            "code": "PEI",
+            "city": "Pereira"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "259000"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "airline": "Avianca",
+      "flight_code": "AA123",
+      "departure_airport": {
+        "name": "Aeropueto Internacional Antonio Roldan",
+        "code": "APO",
+        "city": "Carepa"
+      },
+      "destinations": [
+        {
+          "id": 1,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Edén",
+            "code": "AXM",
+            "city": "Armenia"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "400000"
+        },
+        {
+          "id": 2,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional El Dorado",
+            "code": "BOG",
+            "city": "Bogotá"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "250.000"
+        },
+        {
+          "id": 3,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Rafael Nuñez",
+            "code": "CTG",
+            "city": "Cartagena"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "400000"
+        },
+        {
+          "id": 4,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Gustavo Rojas Pinilla",
+            "code": "ACZ",
+            "city": "San Andres"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "500000"
+        },
+        {
+          "id": 5,
+          "arrival_airport": {
+            "name": "Aeropuerto Internacional Matecaña",
+            "code": "PEI",
+            "city": "Pereira"
+          },
+          "exit": {
+            "departure_date": "15/08/2023",
+            "departure_time": "10:00:00",
+            "arrival_date": "15/08/2023",
+            "arrival_time": "15:00:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "return": {
+            "departure_date": "28/08/2023",
+            "departure_time": "08:00:00",
+            "arrival_date": "28/08/2023",
+            "arrival_time": "13:30:00",
+            "arrival_time_alt": "16:30:00",
+            "duration": "01:30"
+          },
+          "price": "259000"
+        }
+      ]
     }
   ],
   "baggages": [
