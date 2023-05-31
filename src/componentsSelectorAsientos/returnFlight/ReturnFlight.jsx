@@ -30,7 +30,7 @@ const ReturnFlight = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/seatsReturn");
+        const response = await axios.get("https://colorful-rustic-network.glitch.me/seatsReturn");
         const seatsData = response.data.map((seat) => ({
           id: seat.id,
           status: seat.status,
@@ -61,7 +61,7 @@ const ReturnFlight = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:3000/seatsReturn",
+          "https://colorful-rustic-network.glitch.me/seatsReturn",
           newSeat
         );
         const createdSeat = response.data;

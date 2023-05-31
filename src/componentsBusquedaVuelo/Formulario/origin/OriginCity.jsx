@@ -21,7 +21,7 @@ const Origin = () => {
   useEffect(() => {
     const fetchDataOrigin = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/flights");
+        const response = await axios.get("https://colorful-rustic-network.glitch.me/flights");
         setCities(response.data.map((item) => item.departure_airport.city));
         console.log("Respuesta del servidor:", response.data);
       } catch (error) {

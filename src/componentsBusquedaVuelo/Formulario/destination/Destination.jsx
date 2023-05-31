@@ -24,7 +24,7 @@ const Destination = () => {
   const fetchDataDestination = async () => {
     try {
       const storedCityOrigin = sessionStorage.getItem("selectedCityOrigin");
-      const response = await axios.get("http://localhost:3000/flights");
+      const response = await axios.get("https://colorful-rustic-network.glitch.me/flights");
 
       if (storedCityOrigin) {
         const cities = response.data
