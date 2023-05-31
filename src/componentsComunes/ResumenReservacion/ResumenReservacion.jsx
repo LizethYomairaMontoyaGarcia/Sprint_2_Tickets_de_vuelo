@@ -27,6 +27,8 @@ const bebes = pasajerosObjeto.baby;
 // Suma la cantidad de adultos, niños y bebés para obtener el total
 const totalPasajeros = adultos + niños + bebes;
 
+localStorage.setItem("xpasajeros",totalPasajeros)
+
 const vuelosEncontrados = JSON.parse(localStorage.getItem('vuelosEncontrados'));
 let horariosIda = [];
 let horariosRegreso = [];
@@ -202,6 +204,8 @@ const costoMaletas = costosVuelo.costoMaletas;
 const iva = costosVuelo.iva;
 const total = costosVuelo.total;
 
+// Guardar el total en el Session Storage
+localStorage.setItem("total", total);
 
 //----------------------------------------------
 

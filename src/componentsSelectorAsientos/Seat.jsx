@@ -21,7 +21,7 @@ function Seat() {
   //para redirijir a la pagina de pago
   const navigate = useNavigate();
   const handleButton = () => {
-    navigate("/pay");
+    navigate("/formpago");
   };
 
   return (

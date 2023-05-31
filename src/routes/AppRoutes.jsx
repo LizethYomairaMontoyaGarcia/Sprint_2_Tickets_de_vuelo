@@ -4,7 +4,8 @@ import App from "../App/App";
 import FlightSelector from "../pages/FlightSelector2";
 import SeatSelector from "../pages/SeatSelector3";
 import NotFoundPage from "../pages/NotFoundPage";
-import ComponentesPago from "../pages/ComponentesPago";
+import FormularioPago from "../pages/FormularioPago4";
+import ResumenVuelo from "../pages/ResumenVuelo5" ;
 
 export const searchParamsContext = createContext({});
 
@@ -39,7 +40,8 @@ const AppRoutes = () => {
           <Route path="/" element={<App />} />
           <Route path="flightSelector" element={<FlightSelector />} />
           <Route path="seatSelector" element={<SeatSelector />} />
-          <Route path="pay" element={<ComponentesPago />} />
+          <Route path="formpago" element={<FormularioPago />} />
+          <Route path="resume" element={<ResumenVuelo/>} />
           <Route path="/" component={<Navigate to="/FlightSearch" />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
