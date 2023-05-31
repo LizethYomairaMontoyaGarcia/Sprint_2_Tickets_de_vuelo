@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const DIV = styled.div`
   display: flex;
-  padding: 0px 0px 0px 80px;
 `;
 
 export const StyleHeaderForm = styled.div`
@@ -17,11 +16,10 @@ export const StyleHeaderForm = styled.div`
   @media screen and (max-width: 765px) {
     top: 250px;
     padding: 0px 0px;
-    background: DarkGry;
-    width: 320px;
+    margin-bottom: 100px;
+    width: 359px;
   }
 `;
-
 
 export const StyledButtonForm = styled.div`
   display: flex;
@@ -44,7 +42,7 @@ export const P = styled.p`
   color: Gray;
   font-size: 1.2rem;
   @media screen and (max-width: 765px) {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 `;
 
@@ -53,9 +51,9 @@ export const H1 = styled.h1`
   font-size: 3rem;
   padding: 10px 0;
   font-weight: 900;
-  
+
   @media screen and (max-width: 765px) {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 `;

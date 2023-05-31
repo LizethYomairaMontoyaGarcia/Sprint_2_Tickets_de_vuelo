@@ -51,5 +51,6 @@ export const Title = styled.h1`
   padding: 20px 0px 20px 0px;
   @media screen and (max-width: 765px) {
     text-align: center;
+    margin-top: 500px;
   }
 `;

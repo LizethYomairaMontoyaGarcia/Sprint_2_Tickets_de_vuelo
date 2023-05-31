@@ -22,5 +22,6 @@ export const ImgVuelo = styled.img`
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     width: 100%;
+    height: 100%;
   }
 `;

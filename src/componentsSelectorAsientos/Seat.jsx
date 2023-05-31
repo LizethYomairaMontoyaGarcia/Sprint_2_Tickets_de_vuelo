@@ -4,9 +4,6 @@ import ReturnFlight from "./returnFlight/ReturnFlight";
 import {
   DivInfoFlight,
   DivPadre,
-  InfoFlight,
-  InfoPrice,
-  Promotion,
   Total,
   Title,
   Info,
@@ -15,7 +12,7 @@ import {
 } from "./SeatStyled";
 import { useNavigate } from "react-router-dom";
 import Paypal from "../images/paypal.png";
-
+import ResumenReservacion from "../componentsComunes/ResumenReservacion/ResumenReservacion";
 
 function Seat() {
   //para redirijir a la pagina de pago
@@ -32,37 +29,8 @@ function Seat() {
       </div>
 
       <DivInfoFlight>
-        <Title>
-          <h2>Tu Reservacion </h2>
-        </Title>
-        <InfoFlight>
-          <p>
-            Pasajero <strong>1 Adulto</strong>
-          </p>
-          <h3>Vuelo de salida</h3>
-          <h2>MEX ____ CUL </h2>
-          <p>05:45 PM _____06:47 PM</p>
-          <p>Martes, 30 novimbre, 2023</p>
-          <h3>Vuelo de regreso</h3>
-          <h2>CUL ____ MEX </h2>
-          <p>05:45 PM _____06:47 PM</p>
-          <p>Miercoles, 05 diciembre, 2023</p>
-        </InfoFlight>
-
         <div>
-          <Title>
-            <h2>Costo de vuelo</h2>
-          </Title>
-          <InfoPrice>
-            <p>Tarifa base ---------------------$200.000</p>
-            <Promotion>Descunento Promocional ----$0</Promotion>
-            <Promotion>Descuento promocional 2 ---$0 </Promotion>
-            <p>Tarifa base con descuento ---$0</p>
-            <p>IVA Tarifa ---------------------$0</p>
-            <div>
-              <strong>TOTAL ------------------------$200.000</strong>
-            </div>
-          </InfoPrice>
+          <ResumenReservacion />
         </div>
 
         <div>
@@ -70,8 +38,8 @@ function Seat() {
             <h2>Servicios opcionales</h2>
           </Title>
           <Info>
-            <p>Selecciona tu asiento de salida --------- A1</p>
-            <p>Selecciona tu asiento de Retorno ------ A1</p>
+            <p>Selecciona tu asiento de salida --------- $0</p>
+            <p>Selecciona tu asiento de Retorno ------ $0</p>
           </Info>
         </div>
 
