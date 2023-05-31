@@ -12,8 +12,8 @@ const ButtonGeneral = styled.button`
   padding: 10px 10px;
   font-size: 1rem;
   @media screen and (max-width: 765px) {
-    width: 80px;
-    font-size: 0.5rem;
+    width: 82px;
+    font-size: 0.6rem;
     width:70px;
   }
 `;

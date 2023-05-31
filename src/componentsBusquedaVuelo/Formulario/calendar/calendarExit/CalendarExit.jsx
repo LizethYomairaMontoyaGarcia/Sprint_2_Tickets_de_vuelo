@@ -10,7 +10,7 @@ import isBetweenPlugin from "dayjs/plugin/isBetween";
 import { ModalDestinationCity } from "../../destination/DestinationStyled";
 import { Modal } from "./CalendarExitStyled";
 import {Calendar, SpanExit, Div, DivExit, Exit} from "./CalendarExitStyled"
-
+//para manejar las fechas y realizar operaciones
 dayjs.extend(isBetweenPlugin);
 export default function CalendarExit() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,20 +22,21 @@ export default function CalendarExit() {
   const closeModal = () => {
     setModalOpen(false);
   };
-  const [dateIncome, setDateIncome] = useState({});
+  const [dateExit, setDateExit] = useState({});
 
   const { dateCalendarExit, setDateCalendarExit } =
     useContext(searchParamsContext);
-  let infoDateReturn = {};
+
+  let infoDateExit = {};
   const calendarOperation = (date) => {
-    infoDateReturn = { day: date.$D, month: date.$M+1, year: date.$y };
-    setDateIncome(infoDateReturn);
+    infoDateExit = { day: date.$D, month: date.$M+1, year: date.$y };
+    setDateExit(infoDateExit);
     // Guardar la información en Session Storage
     sessionStorage.setItem(
       "selectedDateOutcome",
-      JSON.stringify(infoDateReturn)
+      JSON.stringify(infoDateExit)
     );
-    setDateCalendarExit({ infoDateReturn });
+    setDateCalendarExit({ infoDateExit });
     closeModal();
   };
 
@@ -62,9 +63,9 @@ export default function CalendarExit() {
           openModal();
         }}
       >
-        {dateIncome.day ? (
+        {dateExit.day ? (
           <SpanExit>
-            {dateIncome.day}/{dateIncome.month}/{dateIncome.year}
+            {dateExit.day}/{dateExit.month}/{dateExit.year}
           </SpanExit>
         ) : (
           <SpanExit>------</SpanExit>

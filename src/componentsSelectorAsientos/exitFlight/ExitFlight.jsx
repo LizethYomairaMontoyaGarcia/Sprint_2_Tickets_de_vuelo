@@ -46,7 +46,7 @@ const ExitFlight = () => {
   }, []);
 
   const [seats, setSeats] = useState([]);
-
+  //este se ejecuta para cuanso se selecione un asiento
   const handleSeatSelection = async (codeSeat) => {
     const increasePassengerCount = (type) => {
       setSelectedPassengers((prevPassengers) => ({
@@ -83,7 +83,7 @@ const ExitFlight = () => {
     const rows = 10;
     //columnas
     const columns = 6;
-
+    //generar la interfaz de los asientos
     const renderSeats = () => {
       const seatsArray = [];
       for (let index = 0; index < rows; index++) {
@@ -91,6 +91,7 @@ const ExitFlight = () => {
 
         for (let position = 0; position < columns; position++) {
           const specialColumn = position === 2;
+          //convertir un numero a un caracter
           const codeSeat = `${String.fromCharCode(65 + position)}${index + 1}`;
           //puesto seleccionado
           const selected = seats.some((seat) => seat.id === codeSeat);

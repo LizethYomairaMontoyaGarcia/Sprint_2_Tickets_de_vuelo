@@ -765,6 +765,12 @@
       "status": {
         "selected": true
       }
+    },
+    {
+      "id": "A1",
+      "status": {
+        "selected": true
+      }
     }
   ],
   "seatsReturn": [
@@ -794,6 +800,12 @@
     },
     {
       "id": "B3",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "A1",
       "status": {
         "selected": true
       }
