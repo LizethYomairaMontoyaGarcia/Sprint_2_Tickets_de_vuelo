@@ -9,7 +9,6 @@
         "code": "MDE",
         "city": "Rionegro"
       },
-
       "destinations": [
         {
           "id": 1,
@@ -80,7 +79,6 @@
           },
           "price": "400.000"
         },
-
         {
           "id": 4,
           "arrival_airport": {
@@ -104,7 +102,6 @@
           },
           "price": "500.000"
         },
-
         {
           "id": 5,
           "arrival_airport": {
@@ -142,7 +139,6 @@
       "description": "hand_baggage",
       "price": "60.000"
     },
-
     {
       "id": 3,
       "description": "baggage_25kg",
@@ -157,9 +153,16 @@
         "last_name": "",
         "phone": "",
         "email": "",
-        "document_type": ["CC", "TI", "RC"],
+        "document_type": [
+          "CC",
+          "TI",
+          "RC"
+        ],
         "document_number": "",
-        "genre": ["male", "female"]
+        "genre": [
+          "male",
+          "female"
+        ]
       },
       "departure_flight": "",
       "arrivale_flight": "",
@@ -180,53 +183,61 @@
       "TUA": "250.000"
     }
   ],
-  "seats": [
+  "seatsSalida": [
     {
-      "id": "1A",
+      "id": "E2",
       "status": {
-        "available": true,
-        "reserved": false,
-        "selected": false
+        "selected": true
       }
     },
     {
-      "id": "1B",
+      "id": "C4",
       "status": {
-        "available": true,
-        "reserved": false,
-        "selected": false
+        "selected": true
       }
     },
     {
-      "id": "1C",
+      "id": "F6",
       "status": {
-        "available": true,
-        "reserved": false,
-        "selected": false
+        "selected": true
       }
     },
     {
-      "id": "1D",
+      "id": "B8",
       "status": {
-        "available": true,
-        "reserved": false,
-        "selected": false
+        "selected": true
+      }
+    }
+  ],
+  "seatsReturn": [
+    {
+      "id": "D2",
+      "status": {
+        "selected": true
       }
     },
     {
-      "id": "1E",
+      "id": "D6",
       "status": {
-        "available": true,
-        "reserved": false,
-        "selected": false
+        "selected": true
       }
     },
     {
-      "id": "1F",
+      "id": "C6",
       "status": {
-        "available": true,
-        "reserved": false,
-        "selected": false
+        "selected": true
+      }
+    },
+    {
+      "id": "C4",
+      "status": {
+        "selected": true
+      }
+    },
+    {
+      "id": "B3",
+      "status": {
+        "selected": true
       }
     }
   ]

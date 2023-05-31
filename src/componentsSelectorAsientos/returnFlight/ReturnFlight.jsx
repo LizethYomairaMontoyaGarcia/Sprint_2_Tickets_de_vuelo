@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useContext }  from "react";
 import {
   DivStyledReturn,
   StyledReturn,
@@ -7,8 +7,6 @@ import {
   PositioNumbering,
   PositioNumberingSpace,
   Seats,
-  ReturnPostButton,
-  Column2Arrival,
   ColumnReturn,
   ReferencePost,
   RowSeats,
@@ -16,6 +14,8 @@ import {
   ReturntStandar,
 } from "./ReturnFlightStyled";
 import { useNavigate } from "react-router-dom";
+import { searchParamsContext } from "../../routes/AppRoutes";
+import axios from "axios";
 
 const ReturnFlight = () => {
   const navigate = useNavigate();
@@ -24,6 +24,104 @@ const ReturnFlight = () => {
     console.log("entre");
     navigate("/");
   };
+
+  const { setSelectedPassengers } = useContext(searchParamsContext);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/seatsReturn");
+        const seatsData = response.data.map((seat) => ({
+          id: seat.id,
+          status: seat.status,
+          selected: seat.status.selected,
+        }));
+        setSeats(seatsData);
+      } catch (error) {
+        console.error("Error al obtener los asientos:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const [seats, setSeats] = useState([]);
+
+  const handleSeatSelection = async (codeSeat) => {
+    const increasePassengerCount = (type) => {
+      setSelectedPassengers((prevPassengers) => ({
+        ...prevPassengers,
+        [type]: prevPassengers[type] + 1,
+      }));
+    };
+
+    //para cuando se selecione la silla en el db.json se guarde asi: selected: true
+    if (!seats.some((seat) => seat.id === codeSeat)) {
+      const newSeat = { id: codeSeat, status: { selected: true } };
+
+      try {
+        const response = await axios.post(
+          "http://localhost:3000/seatsReturn",
+          newSeat
+        );
+        const createdSeat = response.data;
+        setSeats([...seats, createdSeat]);
+        //guardar en el sesion storage
+        increasePassengerCount();
+        sessionStorage.setItem(
+          "selectedSeatsReturn",
+          JSON.stringify([...seats, createdSeat])
+        );
+      } catch (error) {
+        console.error("Error al guardar el asiento se salida:", error);
+      }
+    }
+  };
+
+  const ReturnSeats = () => {
+    //filas
+    const rows = 10;
+    //columnas
+    const columns = 6;
+
+    const renderSeats = () => {
+      const seatsArray = [];
+      for (let index = 0; index < rows; index++) {
+        const arrayRows = [];
+
+        for (let position = 0; position < columns; position++) {
+          const specialColumn = position === 2;
+          const codeSeat = `${String.fromCharCode(65 + position)}${index + 1}`;
+          //puesto seleccionado
+          const selected = seats.some((seat) => seat.id === codeSeat);
+          arrayRows.push(
+            <button
+              onClick={() => handleSeatSelection(codeSeat)}
+              style={{
+                marginRight: specialColumn ? "50px" : "10px",
+                width: "50px",
+                height: "50px",
+                border: "none",
+                borderRadius: "5px",
+                marginBottom: "10px",
+                backgroundColor: selected ? "#4b6ecf" : "#cecece",
+                cursor: "pointer",
+              }}
+              key={position}
+            >
+              {codeSeat}
+            </button>
+          );
+        }
+        seatsArray.push(arrayRows);
+      }
+
+      return seatsArray;
+    };
+
+    return <div>{renderSeats()}</div>;
+  };
+
 
   return (
     <>
@@ -63,133 +161,7 @@ const ReturnFlight = () => {
           <ReturntStandar>Salida Rapida</ReturntStandar>
         </SubtitleReturn>
         <Seats>
-          <ColumnReturn>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-          </ColumnReturn>
-          <Column2Arrival>
-            <PositioNumbering>1</PositioNumbering>
-            <PositioNumbering>3</PositioNumbering>
-            <PositioNumbering>4</PositioNumbering>
-            <PositioNumbering>2</PositioNumbering>
-            <PositioNumbering>5</PositioNumbering>
-          </Column2Arrival>
-          <ColumnReturn>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-          </ColumnReturn>
-        </Seats>
-        <SubtitleReturn>
-          <ReturntStandar>Estándar</ReturntStandar>
-        </SubtitleReturn>
-        <Seats>
-          <ColumnReturn>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-          </ColumnReturn>
-          <Column2Arrival>
-            <PositioNumbering>6</PositioNumbering>
-            <PositioNumbering>7</PositioNumbering>
-            <PositioNumbering>8</PositioNumbering>
-            <PositioNumbering>9</PositioNumbering>
-            <PositioNumbering>10</PositioNumbering>
-          </Column2Arrival>
-          <ColumnReturn>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-            <RowSeats>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-              <ReturnPostButton></ReturnPostButton>
-            </RowSeats>
-          </ColumnReturn>
+        <ReturnSeats/>
         </Seats>
       </DivStyledReturn>
     </>

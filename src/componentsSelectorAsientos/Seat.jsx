@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ExitFlight from "./exitFlight/ExitFlight";
 import ReturnFlight from "./returnFlight/ReturnFlight";
 import {
@@ -15,7 +15,7 @@ import {
 } from "./SeatStyled";
 import { useNavigate } from "react-router-dom";
 import Paypal from "../images/paypal.png";
-import axios from "axios";
+
 
 function Seat() {
   //para redirijir a la pagina de pago
@@ -79,7 +79,7 @@ function Seat() {
           <h3>TOTAL ------------------$200.000</h3>
         </Total>
 
-        <ButtonPaypal type="button" onClick={() => handleButton()}>.
+        <ButtonPaypal type="button" onClick={() => handleButton()}>
           <ImgPaypal src={Paypal} alt="paypal" /> Pagar con Paypal
         </ButtonPaypal>
       </DivInfoFlight>
